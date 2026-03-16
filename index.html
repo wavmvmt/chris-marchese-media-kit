@@ -581,8 +581,8 @@ nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); paddin
 .packages-inner { position: relative; z-index: 2; max-width: 1300px; margin: 0 auto; padding: 0 64px; }
 .packages-header { text-align: center; margin-bottom: 72px; }
 .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-.package-card { background: rgba(8,8,8,0.28); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(200,169,110,0.25); padding: 48px 36px; position: relative; overflow: hidden; transition: border-color 0.3s, transform 0.3s; }
-.package-card.featured { border-color: rgba(200,169,110,0.45); }
+.package-card { background: transparent; border: 1px solid rgba(200,169,110,0.22); padding: 48px 36px; position: relative; overflow: hidden; transition: border-color 0.3s, transform 0.3s; }
+.package-card.featured { border-color: rgba(200,169,110,0.5); }
 .package-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0; transition: opacity 0.4s; }
 .package-card:hover { border-color: rgba(200,169,110,0.4); transform: translateY(-4px); }
 .package-card:hover::after, .package-card.featured::after { opacity: 1; }
@@ -606,9 +606,12 @@ nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); paddin
 .brands-inner { position: relative; z-index: 2; max-width: 1300px; margin: 0 auto; padding: 0 64px; }
 .brands-header { text-align: center; margin-bottom: 72px; }
 .brands-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-bottom: 64px; }
-.brand-cell { background: var(--surface); border: 1px solid var(--border); padding: 36px 24px; text-align: center; transition: border-color 0.3s, background 0.3s; }
-.brand-cell:hover { border-color: rgba(200,169,110,0.4); background: var(--surface-2); }
-.brand-icon { width: 40px; height: 40px; margin: 0 auto 14px; opacity: 0.5; }
+.brand-cell { background: transparent; border: 1px solid rgba(200,169,110,0.18); padding: 36px 24px; text-align: center; transition: border-color 0.3s, background 0.3s, transform 0.3s; cursor: pointer; position: relative; }
+.brand-cell:hover { border-color: rgba(200,169,110,0.55); background: rgba(200,169,110,0.05); transform: translateY(-3px); }
+.brand-cell-hint { font-family: var(--font-ui); font-size: 0.46rem; letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; margin-top: 10px; opacity: 0; transition: opacity 0.3s; }
+.brand-cell:hover .brand-cell-hint { opacity: 1; }
+.brand-icon { width: 40px; height: 40px; margin: 0 auto 14px; opacity: 0.45; transition: opacity 0.3s; }
+.brand-cell:hover .brand-icon { opacity: 0.85; }
 .brand-icon svg { width: 100%; height: 100%; }
 .brand-name { font-family: var(--font-ui); font-size: 0.62rem; letter-spacing: 0.2em; color: var(--white-dim); text-transform: uppercase; }
 .brands-value { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
@@ -617,6 +620,36 @@ nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); paddin
 .value-label { font-family: var(--font-ui); font-size: 0.58rem; letter-spacing: 0.2em; color: var(--white-dim); text-transform: uppercase; margin-bottom: 10px; }
 .value-desc { font-size: 0.82rem; color: rgba(245,242,238,0.45); line-height: 1.6; }
 @media (max-width: 900px) { .brands-inner { padding: 0 20px; } .brands-grid { grid-template-columns: repeat(2, 1fr); } .brands-value { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   NICHE MODAL
+   ============================================================ */
+.niche-overlay { position: fixed; inset: 0; z-index: 9000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.4s; }
+.niche-overlay.active { opacity: 1; pointer-events: all; }
+.niche-backdrop { position: absolute; inset: 0; background: rgba(4,4,4,0.92); }
+.niche-modal { position: relative; z-index: 1; width: 92vw; max-width: 1000px; max-height: 90vh; overflow: hidden; display: flex; flex-direction: column; border: 1px solid rgba(200,169,110,0.2); transform: translateY(28px) scale(0.97); transition: transform 0.4s cubic-bezier(0.22,1,0.36,1); }
+.niche-overlay.active .niche-modal { transform: translateY(0) scale(1); }
+.niche-slider-wrap { position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden; background: #0a0a0a; flex-shrink: 0; }
+.niche-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.65s ease; }
+.niche-slide.active { opacity: 1; }
+.niche-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.niche-slide-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(4,4,4,0.7) 0%, rgba(4,4,4,0.1) 60%, transparent 100%); }
+.niche-slider-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(4,4,4,0.5); border: 1px solid rgba(200,169,110,0.25); color: var(--white-dim); width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 2; transition: background 0.2s, border-color 0.2s; }
+.niche-slider-arrow:hover { background: rgba(200,169,110,0.15); border-color: rgba(200,169,110,0.6); }
+.niche-slider-arrow.prev { left: 16px; }
+.niche-slider-arrow.next { right: 16px; }
+.niche-slider-arrow svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+.niche-dots { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); display: flex; gap: 7px; z-index: 2; }
+.niche-dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(245,242,238,0.3); border: none; cursor: pointer; transition: background 0.2s, transform 0.2s; padding: 0; }
+.niche-dot.active { background: var(--gold); transform: scale(1.3); }
+.niche-content { background: rgba(6,6,6,0.97); padding: 44px 52px; }
+.niche-label { font-family: var(--font-ui); font-size: 0.52rem; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; margin-bottom: 18px; }
+.niche-quote { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 300; font-style: italic; line-height: 1.25; color: var(--white); margin-bottom: 20px; }
+.niche-body { font-size: 0.88rem; color: var(--white-dim); line-height: 1.75; max-width: 680px; }
+.niche-close { position: absolute; top: 16px; right: 16px; z-index: 10; background: rgba(4,4,4,0.6); border: 1px solid rgba(200,169,110,0.2); color: var(--white-dim); width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+.niche-close:hover { background: rgba(200,169,110,0.15); border-color: rgba(200,169,110,0.5); }
+.niche-close svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+@media (max-width: 700px) { .niche-content { padding: 28px 24px; } .niche-slider-arrow { width: 36px; height: 36px; } }
 
 /* ============================================================
    CONTACT
@@ -1010,14 +1043,14 @@ footer { background: var(--surface); border-top: 1px solid var(--border); paddin
       <p class="reveal reveal-delay-2" style="color:var(--white-dim);max-width:540px;margin:0 auto;font-size:0.95rem">Ideal for brands in the luxury hospitality, travel, dining, fashion, and lifestyle verticals seeking authentic audience connection.</p>
     </div>
     <div class="brands-grid reveal">
-      <div class="brand-cell"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="10" width="30" height="20" rx="2" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M5 15h30M15 10v20" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Luxury Hotels</div></div>
-      <div class="brand-cell"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 5L5 15v20h10V25h10v10h10V15L20 5z" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Private Villas</div></div>
-      <div class="brand-cell"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="16" r="8" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M8 35c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Fine Dining</div></div>
-      <div class="brand-cell"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 20 Q20 5 33 20 Q20 35 7 20z" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><circle cx="20" cy="20" r="4" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Travel Brands</div></div>
-      <div class="brand-cell"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 30V15l10-8 10 8v15" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><rect x="16" y="22" width="8" height="8" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Lifestyle</div></div>
-      <div class="brand-cell"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="12" width="24" height="18" rx="2" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M14 12V9a6 6 0 0112 0v3" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Fashion</div></div>
-      <div class="brand-cell"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L33 14v12L20 33 7 26V14z" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Spirits &amp; Wine</div></div>
-      <div class="brand-cell"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="12" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M20 8v12l7 7" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Wellness &amp; Spa</div></div>
+      <div class="brand-cell" onclick="openNiche('hotels')" role="button" tabindex="0" aria-label="Luxury Hotels — click to explore"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="10" width="30" height="20" rx="2" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M5 15h30M15 10v20" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Luxury Hotels</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('villas')" role="button" tabindex="0" aria-label="Private Villas — click to explore"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 5L5 15v20h10V25h10v10h10V15L20 5z" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Private Villas</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('dining')" role="button" tabindex="0" aria-label="Fine Dining — click to explore"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="16" r="8" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M8 35c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Fine Dining</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('travel')" role="button" tabindex="0" aria-label="Travel Brands — click to explore"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 20 Q20 5 33 20 Q20 35 7 20z" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><circle cx="20" cy="20" r="4" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Travel Brands</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('lifestyle')" role="button" tabindex="0" aria-label="Lifestyle — click to explore"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 30V15l10-8 10 8v15" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><rect x="16" y="22" width="8" height="8" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Lifestyle</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('fashion')" role="button" tabindex="0" aria-label="Fashion — click to explore"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="12" width="24" height="18" rx="2" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M14 12V9a6 6 0 0112 0v3" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Fashion</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('spirits')" role="button" tabindex="0" aria-label="Spirits &amp; Wine — click to explore"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L33 14v12L20 33 7 26V14z" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Spirits &amp; Wine</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('wellness')" role="button" tabindex="0" aria-label="Wellness &amp; Spa — click to explore"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="12" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M20 8v12l7 7" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Wellness &amp; Spa</div><div class="brand-cell-hint">Explore ↗</div></div>
     </div>
     <div class="brands-value">
       <div class="value-point reveal"><div class="value-num" data-count="4.2" data-suffix="%">0</div><div class="value-label">Engagement Rate</div><div class="value-desc">Well above the industry average of 1–2% for accounts in this follower range, signaling highly invested viewers.</div></div>
@@ -1405,6 +1438,212 @@ footer { background: var(--surface); border-top: 1px solid var(--border); paddin
   if (splashCta) splashCta.addEventListener('click', startMusic, { once: true });
   // Fallback: any first click anywhere on the page
   document.addEventListener('click', startMusic, { once: true });
+})();
+</script>
+
+<!-- ============================================================
+     NICHE MODAL
+     ============================================================ -->
+<div class="niche-overlay" id="nicheOverlay" role="dialog" aria-modal="true" aria-label="Niche Details">
+  <div class="niche-backdrop" onclick="closeNiche()"></div>
+  <div class="niche-modal">
+    <button class="niche-close" onclick="closeNiche()" aria-label="Close">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+    <div class="niche-slider-wrap">
+      <div id="nicheSlides"></div>
+      <div class="niche-slide-overlay"></div>
+      <button class="niche-slider-arrow prev" onclick="nicheSlide(-1)" aria-label="Previous">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <button class="niche-slider-arrow next" onclick="nicheSlide(1)" aria-label="Next">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+      <div class="niche-dots" id="nicheDots"></div>
+    </div>
+    <div class="niche-content">
+      <div class="niche-label" id="nicheLabel"></div>
+      <div class="niche-quote" id="nicheQuote"></div>
+      <div class="niche-body" id="nicheBody"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var NICHES = {
+    hotels: {
+      label: 'Luxury Hotels',
+      quote: 'Where your guests stay says everything about who they aspire to be.',
+      body: "Chris's audience actively books, reviews, and recommends premium hotel experiences. A feature from him doesn't just drive awareness — it drives reservations from an audience that travels to impress and expects nothing less than remarkable.",
+      photos: [
+        'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=1400&q=85&auto=format&fit=crop'
+      ]
+    },
+    villas: {
+      label: 'Private Villas',
+      quote: 'Some addresses aren\'t booked. They\'re earned.',
+      body: "His network of high-net-worth followers and fellow creators treat private villa stays as identity markers. Your property in Chris's content becomes aspirational real estate living rent-free in the audience's imagination — and on their bucket lists.",
+      photos: [
+        'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=1400&q=85&auto=format&fit=crop'
+      ]
+    },
+    dining: {
+      label: 'Fine Dining',
+      quote: 'The right table changes the whole conversation.',
+      body: "Food is culture, ceremony, and story in Chris's world. His audience dines with intention and trusts his palate implicitly. A restaurant featured in his content isn't just seen — it's sought out, reserved, and recommended at the next dinner party.",
+      photos: [
+        'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1550966871-3ed3cbe818b3?w=1400&q=85&auto=format&fit=crop'
+      ]
+    },
+    travel: {
+      label: 'Travel Brands',
+      quote: 'His audience doesn\'t just want to travel. They want to arrive.',
+      body: "360K+ followers who follow Chris aren't searching for deals — they're searching for destinations worth the journey. Airlines, luggage brands, private aviation, and tourism boards all benefit from placement in a feed that frames travel as an art form.",
+      photos: [
+        'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?w=1400&q=85&auto=format&fit=crop'
+      ]
+    },
+    lifestyle: {
+      label: 'Lifestyle',
+      quote: 'Aspiration is an audience. He built one.',
+      body: "From premium accessories to curated experiences, Chris's audience purchases the lifestyle he documents. Brand alignment here isn't advertising — it's an introduction. One that sticks because it arrives wrapped in authenticity, not a script.",
+      photos: [
+        'https://images.unsplash.com/photo-1493815793585-d94ccbc86df8?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1467632499275-7a693a761056?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=1400&q=85&auto=format&fit=crop'
+      ]
+    },
+    fashion: {
+      label: 'Fashion',
+      quote: 'Style isn\'t worn. It\'s witnessed.',
+      body: "Chris brings editorial instinct to every frame. Fashion brands get more than a mention — they get a cinematic moment that outlives the algorithm. His audience doesn't just notice what he's wearing. They want to know where to get it.",
+      photos: [
+        'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1445205170230-053b83016050?w=1400&q=85&auto=format&fit=crop'
+      ]
+    },
+    spirits: {
+      label: 'Spirits & Wine',
+      quote: 'The best moments are always poured, never rushed.',
+      body: "Whether it's a curated cellar, a craft cocktail at altitude, or a sunset pour on the beach, Chris's audience appreciates the ritual behind the glass. Premium spirits and fine wine fit naturally into the world he's built — and they remember the label.",
+      photos: [
+        'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1470158499416-75be9aa0c4db?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=1400&q=85&auto=format&fit=crop'
+      ]
+    },
+    wellness: {
+      label: 'Wellness & Spa',
+      quote: 'Recovery at this level isn\'t a trend. It\'s a standard.',
+      body: "His high-achieving, high-income audience invests in restoration. They're not browsing wellness — they're booking it. Spa brands, retreat properties, and premium wellness lines enter a community already primed to convert and eager to share.",
+      photos: [
+        'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=1400&q=85&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1400&q=85&auto=format&fit=crop'
+      ]
+    }
+  };
+
+  var currentSlide = 0;
+  var slideCount = 0;
+  var touchStartX = 0;
+
+  window.openNiche = function (id) {
+    var n = NICHES[id];
+    if (!n) return;
+    currentSlide = 0;
+
+    // Build slides
+    var slidesEl = document.getElementById('nicheSlides');
+    var dotsEl = document.getElementById('nicheDots');
+    slidesEl.innerHTML = '';
+    dotsEl.innerHTML = '';
+    slideCount = n.photos.length;
+
+    n.photos.forEach(function (url, i) {
+      var slide = document.createElement('div');
+      slide.className = 'niche-slide' + (i === 0 ? ' active' : '');
+      var img = document.createElement('img');
+      img.src = url;
+      img.alt = n.label + ' ' + (i + 1);
+      img.loading = 'lazy';
+      slide.appendChild(img);
+      slidesEl.appendChild(slide);
+
+      var dot = document.createElement('button');
+      dot.className = 'niche-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      (function (idx) { dot.onclick = function () { nicheGoTo(idx); }; })(i);
+      dotsEl.appendChild(dot);
+    });
+
+    document.getElementById('nicheLabel').textContent = n.label;
+    document.getElementById('nicheQuote').textContent = '\u201C' + n.quote + '\u201D';
+    document.getElementById('nicheBody').textContent = n.body;
+
+    document.getElementById('nicheOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeNiche = function () {
+    document.getElementById('nicheOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  function nicheGoTo(idx) {
+    var slides = document.querySelectorAll('.niche-slide');
+    var dots = document.querySelectorAll('.niche-dot');
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = (idx + slideCount) % slideCount;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+  }
+
+  window.nicheSlide = function (dir) { nicheGoTo(currentSlide + dir); };
+
+  // Keyboard support
+  document.addEventListener('keydown', function (e) {
+    var overlay = document.getElementById('nicheOverlay');
+    if (!overlay.classList.contains('active')) return;
+    if (e.key === 'Escape') window.closeNiche();
+    if (e.key === 'ArrowLeft') window.nicheSlide(-1);
+    if (e.key === 'ArrowRight') window.nicheSlide(1);
+  });
+
+  // Touch/swipe
+  document.getElementById('nicheOverlay').addEventListener('touchstart', function (e) {
+    touchStartX = e.touches[0].clientX;
+  }, { passive: true });
+  document.getElementById('nicheOverlay').addEventListener('touchend', function (e) {
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 45) window.nicheSlide(dx < 0 ? 1 : -1);
+  }, { passive: true });
+
+  // Keyboard accessibility for brand cells
+  document.querySelectorAll('.brand-cell').forEach(function (cell) {
+    cell.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); cell.click(); }
+    });
+  });
 })();
 </script>
 </body>
