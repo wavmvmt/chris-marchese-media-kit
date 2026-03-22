@@ -1518,29 +1518,7 @@ section.about, section.metrics, section.reel, section.audience, section.packages
 })();
 </script>
 
-<!-- Background Music -->
-<audio id="bgMusic" loop preload="auto">
-  <source src="assets/audio/fly-me-to-tulum.mp3" type="audio/mpeg">
-</audio>
-<script>
-(function() {
-  var audio = document.getElementById('bgMusic');
-  if (!audio) return;
-  audio.volume = 0.7777;
-  // Start on first user interaction (splash click satisfies browser autoplay policy)
-  var started = false;
-  function startMusic() {
-    if (started) return;
-    started = true;
-    audio.play().catch(function(){});
-  }
-  // Attach to splash CTA — fires when user clicks "View Media Kit"
-  var splashCta = document.getElementById('splashCta');
-  if (splashCta) splashCta.addEventListener('click', startMusic, { once: true });
-  // Fallback: any first click anywhere on the page
-  document.addEventListener('click', startMusic, { once: true });
-})();
-</script>
+<!-- Background Music removed — unified under sound toggle at bottom -->
 
 <!-- ============================================================
      NICHE MODAL
@@ -1762,10 +1740,24 @@ section.about, section.metrics, section.reel, section.audience, section.packages
 var ambientAudio = document.getElementById('ambientAudio');
 var soundBtn = document.getElementById('soundToggle');
 ambientAudio.volume = 0.25;
+
+// Auto-start music on splash CTA click, and sync toggle state
+var musicStarted = false;
+function startMusic() {
+  if (musicStarted) return;
+  musicStarted = true;
+  ambientAudio.play().then(function() {
+    soundBtn.classList.add('playing');
+  }).catch(function(e) { console.log('Audio play blocked:', e); });
+}
+var splashCta = document.getElementById('splashCta');
+if (splashCta) splashCta.addEventListener('click', startMusic, { once: true });
+
 function toggleSound() {
   if (ambientAudio.paused) {
     ambientAudio.play().then(function() {
       soundBtn.classList.add('playing');
+      musicStarted = true;
     }).catch(function(e) { console.log('Audio play blocked:', e); });
   } else {
     ambientAudio.pause();
