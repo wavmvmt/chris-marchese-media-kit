@@ -550,7 +550,7 @@ nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); paddin
 .reel-label { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-family: var(--font-ui); font-size: 0.58rem; letter-spacing: 0.22em; color: var(--white-dim); text-transform: uppercase; z-index: 2; }
 .reel-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 2px; }
 .reel-stat { background: rgba(17,17,17,0.85); border: 1px solid var(--border); padding: 28px 20px; text-align: center; }
-.reel-stat-num { font-family: var(--font-display); font-size: 2rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+.reel-stat-num { font-family: var(--font-display); font-size: 2.6rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 6px; }
 .reel-stat-label { font-family: var(--font-ui); font-size: 0.72rem; letter-spacing: 0.2em; color: var(--white-dim); text-transform: uppercase; }
 @media (max-width: 900px) { .reel-inner { padding: 0 20px; } .reel-stats { grid-template-columns: repeat(2, 1fr); } }
 
@@ -850,17 +850,17 @@ section.about, section.metrics, section.reel, section.audience, section.packages
 <div class="ticker" aria-label="Key statistics">
   <div class="ticker-track" aria-hidden="true">
     <div class="ticker-item"><span class="ticker-val">360K</span><span class="ticker-label">Followers</span></div>
-    <div class="ticker-item"><span class="ticker-val">1.5M</span><span class="ticker-label">Total Views</span></div>
-    <div class="ticker-item"><span class="ticker-val">142K</span><span class="ticker-label">Interactions</span></div>
+    <div class="ticker-item"><span class="ticker-val">8.5M</span><span class="ticker-label">Total Views</span></div>
+    <div class="ticker-item"><span class="ticker-val">850K</span><span class="ticker-label">Interactions</span></div>
     <div class="ticker-item"><span class="ticker-val">160K</span><span class="ticker-label">Avg Reel Views</span></div>
     <div class="ticker-item"><span class="ticker-val">700K+</span><span class="ticker-label">Top Reel</span></div>
-    <div class="ticker-item"><span class="ticker-val">368K+</span><span class="ticker-label">Total Reach</span></div>
+    <div class="ticker-item"><span class="ticker-val">2.1M+</span><span class="ticker-label">Total Reach</span></div>
     <div class="ticker-item"><span class="ticker-val">360K</span><span class="ticker-label">Followers</span></div>
-    <div class="ticker-item"><span class="ticker-val">1.5M</span><span class="ticker-label">Total Views</span></div>
-    <div class="ticker-item"><span class="ticker-val">142K</span><span class="ticker-label">Interactions</span></div>
+    <div class="ticker-item"><span class="ticker-val">8.5M</span><span class="ticker-label">Total Views</span></div>
+    <div class="ticker-item"><span class="ticker-val">850K</span><span class="ticker-label">Interactions</span></div>
     <div class="ticker-item"><span class="ticker-val">160K</span><span class="ticker-label">Avg Reel Views</span></div>
     <div class="ticker-item"><span class="ticker-val">700K+</span><span class="ticker-label">Top Reel</span></div>
-    <div class="ticker-item"><span class="ticker-val">368K+</span><span class="ticker-label">Total Reach</span></div>
+    <div class="ticker-item"><span class="ticker-val">2.1M+</span><span class="ticker-label">Total Reach</span></div>
   </div>
 </div>
 
@@ -974,10 +974,10 @@ section.about, section.metrics, section.reel, section.audience, section.packages
       <div class="reel-label">Play Signature Reel</div>
     </div>
     <div class="reel-stats">
-      <div class="reel-stat reveal"><div class="reel-stat-num" data-count="700" data-suffix="K+">0</div><div class="reel-stat-label">Peak Single Reel</div></div>
-      <div class="reel-stat reveal reveal-delay-1"><div class="reel-stat-num" data-count="160" data-suffix="K">0</div><div class="reel-stat-label">Avg Views / Reel</div></div>
-      <div class="reel-stat reveal reveal-delay-2"><div class="reel-stat-num" data-count="4.2" data-suffix="%">0</div><div class="reel-stat-label">Engagement Rate</div></div>
-      <div class="reel-stat reveal reveal-delay-3"><div class="reel-stat-num" data-count="368" data-suffix="K+">0</div><div class="reel-stat-label">Total Reach</div></div>
+      <div class="reel-stat reveal"><div class="reel-stat-num" data-count="700" data-suffix="K+" data-lifetime="700" data-lifetime-suffix="K+" data-30day="700" data-30day-suffix="K+">0</div><div class="reel-stat-label">Peak Single Reel</div></div>
+      <div class="reel-stat reveal reveal-delay-1"><div class="reel-stat-num" data-count="160" data-suffix="K" data-lifetime="160" data-lifetime-suffix="K" data-30day="160" data-30day-suffix="K">0</div><div class="reel-stat-label">Avg Views / Reel</div></div>
+      <div class="reel-stat reveal reveal-delay-2"><div class="reel-stat-num" data-count="4.2" data-suffix="%" data-lifetime="4.2" data-lifetime-suffix="%" data-30day="4.2" data-30day-suffix="%">0</div><div class="reel-stat-label">Engagement Rate</div></div>
+      <div class="reel-stat reveal reveal-delay-3"><div class="reel-stat-num" data-count="2.1" data-suffix="M+" data-lifetime="2.1" data-lifetime-suffix="M+" data-30day="368" data-30day-suffix="K+">0</div><div class="reel-stat-label" data-lifetime-label="Total Reach" data-30day-label="Monthly Reach">Total Reach</div></div>
     </div>
   </div>
 </section>
@@ -1748,7 +1748,7 @@ function toggleSound() {
 function switchMetrics(mode) {
   document.querySelectorAll('.metrics-tab').forEach(function(t) { t.classList.remove('active'); });
   document.getElementById('tab-' + mode).classList.add('active');
-  document.querySelectorAll('.metric-num').forEach(function(el) {
+  document.querySelectorAll('.metric-num, .reel-stat-num').forEach(function(el) {
     var val = el.getAttribute('data-' + mode);
     var suffix = el.getAttribute('data-' + mode + '-suffix');
     if (val) {
@@ -1772,7 +1772,7 @@ function switchMetrics(mode) {
     }
   });
   // Update labels and descriptions
-  document.querySelectorAll('.metric-label').forEach(function(el) {
+  document.querySelectorAll('.metric-label, .reel-stat-label').forEach(function(el) {
     var label = el.getAttribute('data-' + mode + '-label');
     if (label) el.textContent = label;
   });
