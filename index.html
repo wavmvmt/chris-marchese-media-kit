@@ -122,7 +122,7 @@ button { cursor: none; border: none; background: none; font: inherit; }
   overflow: hidden;
   pointer-events: none;
 }
-.splash-video-bg iframe {
+.splash-video-bg iframe, .splash-video-bg video {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%,-50%);
@@ -132,6 +132,7 @@ button { cursor: none; border: none; background: none; font: inherit; }
   min-height: 56.25vw;
   pointer-events: none;
   border: none;
+  object-fit: cover;
 }
 .splash-video-bg::after {
   content: '';
@@ -367,7 +368,7 @@ button { cursor: none; border: none; background: none; font: inherit; }
   z-index: 1;
 }
 .video-bg-layer.darker::after { background: rgba(8,8,8,0.78); }
-.video-bg-layer iframe {
+.video-bg-layer iframe, .video-bg-layer video {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -378,8 +379,9 @@ button { cursor: none; border: none; background: none; font: inherit; }
   min-height: 56.25vw;
   pointer-events: none;
   border: none;
+  object-fit: cover;
 }
-.video-bg-layer.vertical iframe {
+.video-bg-layer.vertical iframe, .video-bg-layer.vertical video {
   width: 100%;
   height: 177.78vw;
   min-width: 0;
@@ -703,7 +705,7 @@ footer { background: var(--surface); border-top: 1px solid var(--border); paddin
 /* VIDEO GAP FIX */
 section + section { margin-top: 0; }
 .has-video-bg + .has-video-bg { margin-top: 0; }
-.has-video-bg .video-bg-layer iframe { top: 50%; left: 50%; transform: translate(-50%,-50%) scale(1.05); }
+.has-video-bg .video-bg-layer iframe, .has-video-bg .video-bg-layer video { top: 50%; left: 50%; transform: translate(-50%,-50%) scale(1.05); }
 section.about, section.metrics, section.reel, section.audience, section.packages, section.brands {
   margin-top: -1px;
 }
@@ -780,7 +782,7 @@ section.about, section.metrics, section.reel, section.audience, section.packages
      ============================================================ -->
 <div id="splash" role="dialog" aria-modal="true" aria-label="Welcome">
   <div class="splash-video-bg" aria-hidden="true">
-    <iframe src="https://player.vimeo.com/video/1173874678?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture"></iframe>
+    <video autoplay muted loop playsinline><source src="assets/video/splash.mp4" type="video/mp4"></video>
   </div>
   <div class="splash-grain" aria-hidden="true"></div>
   <div class="splash-glow" aria-hidden="true"></div>
@@ -869,7 +871,7 @@ section.about, section.metrics, section.reel, section.audience, section.packages
      ============================================================ -->
 <section class="about has-video-bg" id="about" aria-label="About Chris Marchese">
   <div class="video-bg-layer" aria-hidden="true">
-    <iframe data-src="https://player.vimeo.com/video/1174452087?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&portrait=0&dnt=1" src="" title="About background video" allow="autoplay"></iframe>
+    <video autoplay muted loop playsinline><source src="assets/video/hotel-drone.mp4" type="video/mp4"></video>
   </div>
   <button class="video-expand-btn" onclick="openVideoFg('1173872281', false)" aria-label="Watch video fullscreen">
     <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
@@ -905,7 +907,7 @@ section.about, section.metrics, section.reel, section.audience, section.packages
      ============================================================ -->
 <section class="metrics has-video-bg" id="metrics" aria-label="Performance Metrics">
   <div class="video-bg-layer" aria-hidden="true">
-    <iframe data-src="https://player.vimeo.com/video/1174206252?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&portrait=0&dnt=1" src="" title="Metrics background video" allow="autoplay"></iframe>
+    <video autoplay muted loop playsinline><source src="assets/video/event.mp4" type="video/mp4"></video>
   </div>
   <button class="video-expand-btn" onclick="openVideoFg('1173872281', false)" aria-label="Watch video fullscreen">
     <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
@@ -961,7 +963,7 @@ section.about, section.metrics, section.reel, section.audience, section.packages
      ============================================================ -->
 <section class="reel has-video-bg" id="reel" aria-label="Signature Reel">
   <div class="video-bg-layer" aria-hidden="true">
-    <iframe data-src="https://player.vimeo.com/video/1173873229?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&portrait=0&dnt=1" src="" title="Reel background video" allow="autoplay"></iframe>
+    <video autoplay muted loop playsinline><source src="assets/video/reel.mp4" type="video/mp4"></video>
   </div>
   <div class="reel-inner">
     <div class="reel-header">
@@ -987,7 +989,7 @@ section.about, section.metrics, section.reel, section.audience, section.packages
      ============================================================ -->
 <section class="audience has-video-bg" id="audience" aria-label="Audience Insights">
   <div class="video-bg-layer vertical darker" aria-hidden="true">
-    <iframe data-src="https://player.vimeo.com/video/1173873806?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&portrait=0&dnt=1" src="" title="Audience background video" allow="autoplay"></iframe>
+    <video autoplay muted loop playsinline><source src="assets/video/audience.mp4" type="video/mp4"></video>
   </div>
   <button class="video-expand-btn" onclick="openVideoFg('1173873806', true)" aria-label="Watch video fullscreen">
     <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
@@ -1031,7 +1033,7 @@ section.about, section.metrics, section.reel, section.audience, section.packages
      ============================================================ -->
 <section class="packages has-video-bg" id="packages" aria-label="Partnership Packages">
   <div class="video-bg-layer" aria-hidden="true">
-    <iframe data-src="https://player.vimeo.com/video/1173874678?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&portrait=0&dnt=1" src="" title="Packages background video" allow="autoplay"></iframe>
+    <video autoplay muted loop playsinline><source src="assets/video/splash.mp4" type="video/mp4"></video>
   </div>
   <button class="video-expand-btn" onclick="openVideoFg('1173874678', false)" aria-label="Watch video fullscreen">
     <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
@@ -1102,7 +1104,7 @@ section.about, section.metrics, section.reel, section.audience, section.packages
      ============================================================ -->
 <section class="brands has-video-bg" id="brands" aria-label="Brand Fit">
   <div class="video-bg-layer" aria-hidden="true">
-    <iframe data-src="https://player.vimeo.com/video/1174452087?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&portrait=0&dnt=1" src="" title="Brands background video" allow="autoplay"></iframe>
+    <video autoplay muted loop playsinline><source src="assets/video/hotel-drone.mp4" type="video/mp4"></video>
   </div>
   <button class="video-expand-btn" onclick="openVideoFg('1173874678', false)" aria-label="Watch video fullscreen">
     <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
@@ -1335,58 +1337,8 @@ section.about, section.metrics, section.reel, section.audience, section.packages
   }, { passive: true });
 
   /* ----------------------------------------------------------
-     LAZY VIDEO BACKGROUNDS
+     VIDEO BACKGROUNDS — self-hosted MP4s, autoplay natively
      ---------------------------------------------------------- */
-  var videoBgLayers = document.querySelectorAll('.video-bg-layer');
-  var videoLoadQueue = [];
-  var videoLoadIndex = 0;
-  function loadNextVideo() {
-    if (videoLoadIndex < videoLoadQueue.length) {
-      var iframe = videoLoadQueue[videoLoadIndex];
-      iframe.setAttribute('src', iframe.dataset.src);
-      videoLoadIndex++;
-      setTimeout(loadNextVideo, 800);
-    }
-  }
-  if ('IntersectionObserver' in window) {
-    var videoObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          var iframe = entry.target.querySelector('iframe[data-src]');
-          if (iframe && !iframe.getAttribute('src')) {
-            iframe.setAttribute('src', iframe.dataset.src);
-          }
-          videoObserver.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: '600px', threshold: 0 });
-    videoBgLayers.forEach(function (layer) { videoObserver.observe(layer); });
-  } else {
-    videoBgLayers.forEach(function (layer) {
-      var iframe = layer.querySelector('iframe[data-src]');
-      if (iframe) videoLoadQueue.push(iframe);
-    });
-    loadNextVideo();
-  }
-  /* Also force-load first 2 videos after short delay as fallback */
-  setTimeout(function() {
-    videoBgLayers.forEach(function (layer, i) {
-      if (i < 2) {
-        var iframe = layer.querySelector('iframe[data-src]');
-        if (iframe && (!iframe.getAttribute('src') || iframe.getAttribute('src') === '')) {
-          iframe.setAttribute('src', iframe.dataset.src);
-        }
-      }
-    });
-  }, 1500);
-  /* Force-load ALL remaining after 4 seconds as final fallback */
-  setTimeout(function() {
-    document.querySelectorAll('iframe[data-src]').forEach(function(iframe) {
-      if (!iframe.getAttribute('src') || iframe.getAttribute('src') === '') {
-        iframe.setAttribute('src', iframe.dataset.src);
-      }
-    });
-  }, 4000);
 
   /* ----------------------------------------------------------
      COUNTER ANIMATION
