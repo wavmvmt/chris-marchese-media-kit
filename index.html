@@ -583,18 +583,18 @@ nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); paddin
 .packages-inner { position: relative; z-index: 2; max-width: 1300px; margin: 0 auto; padding: 0 64px; }
 .packages-header { text-align: center; margin-bottom: 72px; }
 .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-.package-card { background: transparent; border: 1px solid rgba(200,169,110,0.22); padding: 56px 42px; position: relative; overflow: hidden; transition: border-color 0.3s, transform 0.3s; }
+.package-card { background: rgba(8,8,8,0.55); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); border: 1px solid rgba(200,169,110,0.22); padding: 56px 42px; position: relative; overflow: hidden; transition: border-color 0.3s, transform 0.3s; }
 .package-card.featured { border-color: rgba(200,169,110,0.5); }
 .package-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0; transition: opacity 0.4s; }
 .package-card:hover { border-color: rgba(200,169,110,0.4); transform: translateY(-4px); }
 .package-card:hover::after, .package-card.featured::after { opacity: 1; }
 .package-tag { font-family: var(--font-ui); font-size: 0.72rem; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; border: 1px solid var(--border); padding: 4px 10px; display: inline-block; margin-bottom: 20px; }
-.package-name { font-family: var(--font-display); font-size: 2.4rem; font-weight: 300; margin-bottom: 8px; }
+.package-name { font-family: var(--font-display); font-size: 2.4rem; font-weight: 400; margin-bottom: 8px; text-shadow: 0 2px 12px rgba(0,0,0,0.7); }
 .package-name em { font-style: italic; color: var(--gold-light); }
-.package-price { font-family: var(--font-ui); font-size: 0.85rem; letter-spacing: 0.15em; color: var(--white-dim); margin-bottom: 28px; }
+.package-price { font-family: var(--font-ui); font-size: 0.9rem; letter-spacing: 0.15em; color: #e8e0d0; margin-bottom: 28px; font-weight: 500; text-shadow: 0 1px 6px rgba(0,0,0,0.6); }
 .package-divider { height: 1px; background: var(--border); margin-bottom: 28px; }
 .package-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
-.package-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 1.02rem; color: var(--white-dim); line-height: 1.5; }
+.package-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 1.05rem; color: #e8e0d0; line-height: 1.5; font-weight: 500; text-shadow: 0 1px 6px rgba(0,0,0,0.6); }
 .package-features li::before { content: '—'; color: var(--gold); flex-shrink: 0; font-family: var(--font-ui); }
 .package-cta { display: block; width: 100%; text-align: center; font-family: var(--font-ui); font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(200,169,110,0.35); padding: 13px; transition: background 0.3s, color 0.3s; cursor: none; }
 @media (max-width: 900px) { .package-cta { cursor: pointer; } }
@@ -1116,14 +1116,14 @@ section.about, section.metrics, section.reel, section.audience, section.packages
       <p class="reveal reveal-delay-2" style="color:var(--white-dim);max-width:540px;margin:0 auto;font-size:0.95rem">Ideal for brands in the luxury hospitality, travel, dining, fashion, and lifestyle verticals seeking authentic audience connection.</p>
     </div>
     <div class="brands-grid reveal">
-      <div class="brand-cell" onclick="openNiche('hotels')" role="button" tabindex="0" aria-label="Luxury Hotels — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&h=600&fit=crop&q=80')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="10" width="30" height="20" rx="2" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M5 15h30M15 10v20" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Luxury Hotels</div><div class="brand-cell-hint">Explore ↗</div></div>
-      <div class="brand-cell" onclick="openNiche('villas')" role="button" tabindex="0" aria-label="Private Villas — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&h=600&fit=crop&q=80')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 5L5 15v20h10V25h10v10h10V15L20 5z" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Private Villas</div><div class="brand-cell-hint">Explore ↗</div></div>
-      <div class="brand-cell" onclick="openNiche('dining')" role="button" tabindex="0" aria-label="Fine Dining — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=600&fit=crop&q=80')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="16" r="8" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M8 35c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Fine Dining</div><div class="brand-cell-hint">Explore ↗</div></div>
-      <div class="brand-cell" onclick="openNiche('travel')" role="button" tabindex="0" aria-label="Travel Brands — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=600&fit=crop&q=80')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 20 Q20 5 33 20 Q20 35 7 20z" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><circle cx="20" cy="20" r="4" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Travel Brands</div><div class="brand-cell-hint">Explore ↗</div></div>
-      <div class="brand-cell" onclick="openNiche('lifestyle')" role="button" tabindex="0" aria-label="Lifestyle — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=600&fit=crop&q=80')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 30V15l10-8 10 8v15" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><rect x="16" y="22" width="8" height="8" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Lifestyle</div><div class="brand-cell-hint">Explore ↗</div></div>
-      <div class="brand-cell" onclick="openNiche('fashion')" role="button" tabindex="0" aria-label="Fashion — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=600&fit=crop&q=80')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="12" width="24" height="18" rx="2" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M14 12V9a6 6 0 0112 0v3" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Fashion</div><div class="brand-cell-hint">Explore ↗</div></div>
-      <div class="brand-cell" onclick="openNiche('spirits')" role="button" tabindex="0" aria-label="Spirits &amp; Wine — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&h=600&fit=crop&q=80')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L33 14v12L20 33 7 26V14z" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Spirits &amp; Wine</div><div class="brand-cell-hint">Explore ↗</div></div>
-      <div class="brand-cell" onclick="openNiche('wellness')" role="button" tabindex="0" aria-label="Wellness &amp; Spa — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbec6e?w=600&h=600&fit=crop&q=80')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="12" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M20 8v12l7 7" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Wellness &amp; Spa</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('hotels')" role="button" tabindex="0" aria-label="Luxury Hotels — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=800&h=800&fit=crop&q=90')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="10" width="30" height="20" rx="2" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M5 15h30M15 10v20" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Luxury Hotels</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('villas')" role="button" tabindex="0" aria-label="Private Villas — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=800&fit=crop&q=90')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 5L5 15v20h10V25h10v10h10V15L20 5z" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Private Villas</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('dining')" role="button" tabindex="0" aria-label="Fine Dining — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=800&fit=crop&q=90')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="16" r="8" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M8 35c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Fine Dining</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('travel')" role="button" tabindex="0" aria-label="Travel Brands — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&h=800&fit=crop&q=90')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 20 Q20 5 33 20 Q20 35 7 20z" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><circle cx="20" cy="20" r="4" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Travel Brands</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('lifestyle')" role="button" tabindex="0" aria-label="Lifestyle — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=800&fit=crop&q=90')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 30V15l10-8 10 8v15" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><rect x="16" y="22" width="8" height="8" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Lifestyle</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('fashion')" role="button" tabindex="0" aria-label="Fashion — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=800&fit=crop&q=90')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="12" width="24" height="18" rx="2" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M14 12V9a6 6 0 0112 0v3" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Fashion</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('spirits')" role="button" tabindex="0" aria-label="Spirits &amp; Wine — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=800&h=800&fit=crop&q=90')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L33 14v12L20 33 7 26V14z" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Spirits &amp; Wine</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('wellness')" role="button" tabindex="0" aria-label="Wellness &amp; Spa — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&h=800&fit=crop&q=90')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="12" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M20 8v12l7 7" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Wellness &amp; Spa</div><div class="brand-cell-hint">Explore ↗</div></div>
     </div>
     <div class="brands-value">
       <div class="value-point reveal"><div class="value-num" data-count="4.2" data-suffix="%">0</div><div class="value-label">Engagement Rate</div><div class="value-desc">Well above the industry average of 1–2% for accounts in this follower range, signaling highly invested viewers.</div></div>
@@ -1508,10 +1508,10 @@ section.about, section.metrics, section.reel, section.audience, section.packages
       quote: 'Where your guests stay says everything about who they aspire to be.',
       body: "Chris's audience actively books, reviews, and recommends premium hotel experiences. A feature from him doesn't just drive awareness — it drives reservations from an audience that travels to impress and expects nothing less than remarkable.",
       photos: [
-        'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=1400&q=85&auto=format&fit=crop'
+        'https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1400&q=90&auto=format&fit=crop'
       ]
     },
     villas: {
@@ -1519,10 +1519,10 @@ section.about, section.metrics, section.reel, section.audience, section.packages
       quote: 'Some addresses aren\'t booked. They\'re earned.',
       body: "His network of high-net-worth followers and fellow creators treat private villa stays as identity markers. Your property in Chris's content becomes aspirational real estate living rent-free in the audience's imagination — and on their bucket lists.",
       photos: [
-        'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=1400&q=85&auto=format&fit=crop'
+        'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=1400&q=90&auto=format&fit=crop'
       ]
     },
     dining: {
@@ -1530,10 +1530,10 @@ section.about, section.metrics, section.reel, section.audience, section.packages
       quote: 'The right table changes the whole conversation.',
       body: "Food is culture, ceremony, and story in Chris's world. His audience dines with intention and trusts his palate implicitly. A restaurant featured in his content isn't just seen — it's sought out, reserved, and recommended at the next dinner party.",
       photos: [
-        'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1550966871-3ed3cbe818b3?w=1400&q=85&auto=format&fit=crop'
+        'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1550966871-3ed3cbe818b3?w=1400&q=90&auto=format&fit=crop'
       ]
     },
     travel: {
@@ -1541,10 +1541,10 @@ section.about, section.metrics, section.reel, section.audience, section.packages
       quote: 'His audience doesn\'t just want to travel. They want to arrive.',
       body: "360K+ followers who follow Chris aren't searching for deals — they're searching for destinations worth the journey. Airlines, luggage brands, private aviation, and tourism boards all benefit from placement in a feed that frames travel as an art form.",
       photos: [
-        'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?w=1400&q=85&auto=format&fit=crop'
+        'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?w=1400&q=90&auto=format&fit=crop'
       ]
     },
     lifestyle: {
@@ -1552,10 +1552,10 @@ section.about, section.metrics, section.reel, section.audience, section.packages
       quote: 'Aspiration is an audience. He built one.',
       body: "From premium accessories to curated experiences, Chris's audience purchases the lifestyle he documents. Brand alignment here isn't advertising — it's an introduction. One that sticks because it arrives wrapped in authenticity, not a script.",
       photos: [
-        'https://images.unsplash.com/photo-1493815793585-d94ccbc86df8?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1467632499275-7a693a761056?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=1400&q=85&auto=format&fit=crop'
+        'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1563720223185-11003d516935?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=1400&q=90&auto=format&fit=crop'
       ]
     },
     fashion: {
@@ -1563,10 +1563,10 @@ section.about, section.metrics, section.reel, section.audience, section.packages
       quote: 'Style isn\'t worn. It\'s witnessed.',
       body: "Chris brings editorial instinct to every frame. Fashion brands get more than a mention — they get a cinematic moment that outlives the algorithm. His audience doesn't just notice what he's wearing. They want to know where to get it.",
       photos: [
-        'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1445205170230-053b83016050?w=1400&q=85&auto=format&fit=crop'
+        'https://images.unsplash.com/photo-1445205170230-053b83016050?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=1400&q=90&auto=format&fit=crop'
       ]
     },
     spirits: {
@@ -1574,10 +1574,10 @@ section.about, section.metrics, section.reel, section.audience, section.packages
       quote: 'The best moments are always poured, never rushed.',
       body: "Whether it's a curated cellar, a craft cocktail at altitude, or a sunset pour on the beach, Chris's audience appreciates the ritual behind the glass. Premium spirits and fine wine fit naturally into the world he's built — and they remember the label.",
       photos: [
-        'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1470158499416-75be9aa0c4db?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=1400&q=85&auto=format&fit=crop'
+        'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1470158499416-75be9aa0c4db?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=1400&q=90&auto=format&fit=crop'
       ]
     },
     wellness: {
@@ -1585,10 +1585,10 @@ section.about, section.metrics, section.reel, section.audience, section.packages
       quote: 'Recovery at this level isn\'t a trend. It\'s a standard.',
       body: "His high-achieving, high-income audience invests in restoration. They're not browsing wellness — they're booking it. Spa brands, retreat properties, and premium wellness lines enter a community already primed to convert and eager to share.",
       photos: [
-        'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=1400&q=85&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1400&q=85&auto=format&fit=crop'
+        'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1400&q=90&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1400&q=90&auto=format&fit=crop'
       ]
     }
   };
