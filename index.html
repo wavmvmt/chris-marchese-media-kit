@@ -444,7 +444,7 @@ nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); paddin
 .hero-eyebrow { font-family: var(--font-ui); font-size: 0.68rem; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 20px; }
 .hero-name { font-family: var(--font-display); font-size: clamp(4rem, 10vw, 9rem); font-weight: 300; line-height: 0.88; margin-bottom: 32px; }
 .hero-name em { font-style: italic; color: var(--gold-light); }
-.hero-tagline { font-family: var(--font-ui); font-size: 0.7rem; letter-spacing: 0.25em; color: var(--white-dim); text-transform: uppercase; margin-bottom: 16px; max-width: 480px; }
+.hero-tagline { font-family: var(--font-ui); font-size: 0.9rem; letter-spacing: 0.25em; color: var(--white-dim); text-transform: uppercase; margin-bottom: 16px; max-width: 480px; }
 .hero-line { font-family: var(--font-display); font-size: clamp(1rem, 2vw, 1.4rem); color: var(--white-dim); font-style: italic; max-width: 500px; margin-bottom: 48px; }
 .scroll-cue { display: flex; align-items: center; gap: 14px; font-family: var(--font-ui); font-size: 0.58rem; letter-spacing: 0.25em; color: rgba(200,169,110,0.5); text-transform: uppercase; }
 .scroll-cue::before { content: ''; display: block; width: 30px; height: 1px; background: rgba(200,169,110,0.4); }
@@ -453,12 +453,12 @@ nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); paddin
 /* ============================================================
    STATS TICKER
    ============================================================ */
-.ticker { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden; padding: 18px 0; }
+.ticker { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden; padding: 24px 0; }
 .ticker-track { display: flex; animation: ticker-scroll 32s linear infinite; width: max-content; }
 .ticker-item { display: flex; align-items: center; gap: 20px; padding: 0 40px; white-space: nowrap; border-right: 1px solid var(--border); }
 .ticker-item:last-child { border-right: none; }
-.ticker-val { font-family: var(--font-ui); font-size: 1.05rem; font-weight: 600; color: var(--gold); letter-spacing: 0.05em; }
-.ticker-label { font-family: var(--font-ui); font-size: 0.6rem; letter-spacing: 0.2em; color: var(--white-dim); text-transform: uppercase; }
+.ticker-val { font-family: var(--font-ui); font-size: 1.4rem; font-weight: 600; color: var(--gold); letter-spacing: 0.05em; }
+.ticker-label { font-family: var(--font-ui); font-size: 0.78rem; letter-spacing: 0.2em; color: var(--white-dim); text-transform: uppercase; }
 @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 /* ============================================================
@@ -469,12 +469,12 @@ nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); paddin
 .about-images { position: relative; height: 560px; }
 .about-main-img { position: absolute; inset: 0 60px 0 0; background: url('assets/images/about-main.jpg') 50% 20%/cover no-repeat; border: 1px solid var(--border); }
 .about-float-img { position: absolute; bottom: -40px; right: 0; width: 220px; height: 280px; background: url('assets/images/about-float.jpg') center/cover no-repeat; border: 1px solid rgba(200,169,110,0.3); box-shadow: -20px 20px 60px rgba(0,0,0,0.6); }
-.section-eyebrow { font-family: var(--font-ui); font-size: 0.62rem; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 20px; }
-.section-title { font-family: var(--font-display); font-size: clamp(3rem, 5vw, 4.8rem); font-weight: 300; line-height: 1.02; margin-bottom: 28px; }
+.section-eyebrow { font-family: var(--font-ui); font-size: 0.85rem; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 20px; }
+.section-title { font-family: var(--font-display); font-size: clamp(3.4rem, 6vw, 5.6rem); font-weight: 300; line-height: 1.02; margin-bottom: 28px; }
 .section-title em { font-style: italic; color: var(--gold-light); }
-.about-body p { color: var(--white-dim); font-size: 0.95rem; line-height: 1.8; margin-bottom: 18px; }
+.about-body p { color: var(--white-dim); font-size: 1.1rem; line-height: 1.8; margin-bottom: 18px; }
 .about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
-.about-tag { font-family: var(--font-ui); font-size: 0.58rem; letter-spacing: 0.18em; color: var(--gold); border: 1px solid var(--border); padding: 6px 14px; text-transform: uppercase; }
+.about-tag { font-family: var(--font-ui); font-size: 0.72rem; letter-spacing: 0.18em; color: var(--gold); border: 1px solid var(--border); padding: 6px 14px; text-transform: uppercase; }
 @media (max-width: 900px) { .about-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; } .about-images { height: 360px; } .about-float-img { width: 140px; height: 180px; } }
 
 /* ============================================================
@@ -491,9 +491,9 @@ nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); paddin
 .metric-bar-wrap { position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: rgba(200,169,110,0.1); }
 .metric-bar { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); width: 0; transition: width 1.2s cubic-bezier(0.22,1,0.36,1); }
 .metric-card.visible .metric-bar { width: var(--bar-width, 75%); }
-.metric-num { font-family: var(--font-display); font-size: clamp(2.4rem, 4vw, 3.6rem); font-weight: 300; color: var(--gold-light); line-height: 1; margin-bottom: 10px; }
-.metric-label { font-family: var(--font-ui); font-size: 0.6rem; letter-spacing: 0.22em; color: var(--white-dim); text-transform: uppercase; }
-.metric-desc { font-size: 0.8rem; color: rgba(245,242,238,0.35); margin-top: 8px; }
+.metric-num { font-family: var(--font-display); font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 300; color: var(--gold-light); line-height: 1; margin-bottom: 10px; }
+.metric-label { font-family: var(--font-ui); font-size: 0.8rem; letter-spacing: 0.22em; color: var(--white-dim); text-transform: uppercase; }
+.metric-desc { font-size: 0.95rem; color: rgba(245,242,238,0.35); margin-top: 8px; }
 .metrics-note { text-align: center; font-family: var(--font-ui); font-size: 0.58rem; letter-spacing: 0.18em; color: rgba(245,242,238,0.3); text-transform: uppercase; }
 @media (max-width: 900px) { .metrics-inner { padding: 0 20px; } .metrics-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .metrics-grid { grid-template-columns: 1fr; } }
@@ -521,7 +521,7 @@ nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); paddin
 .gallery-play-circle svg { width: 20px; height: 20px; fill: var(--gold); margin-left: 3px; transition: fill 0.3s; }
 .gallery-video-tile:hover .gallery-play-circle { background: var(--gold); border-color: var(--gold); transform: scale(1.1); }
 .gallery-video-tile:hover .gallery-play-circle svg { fill: var(--black); }
-.gallery-video-label { font-family: var(--font-ui); font-size: 0.58rem; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; position: relative; z-index: 1; }
+.gallery-video-label { font-family: var(--font-ui); font-size: 0.72rem; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; position: relative; z-index: 1; }
 @media (max-width: 900px) {
   .gallery-inner { padding: 0 20px; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: none; }
@@ -551,7 +551,7 @@ nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); paddin
 .reel-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 2px; }
 .reel-stat { background: rgba(17,17,17,0.85); border: 1px solid var(--border); padding: 28px 20px; text-align: center; }
 .reel-stat-num { font-family: var(--font-display); font-size: 2rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 6px; }
-.reel-stat-label { font-family: var(--font-ui); font-size: 0.55rem; letter-spacing: 0.2em; color: var(--white-dim); text-transform: uppercase; }
+.reel-stat-label { font-family: var(--font-ui); font-size: 0.72rem; letter-spacing: 0.2em; color: var(--white-dim); text-transform: uppercase; }
 @media (max-width: 900px) { .reel-inner { padding: 0 20px; } .reel-stats { grid-template-columns: repeat(2, 1fr); } }
 
 /* ============================================================
@@ -581,20 +581,20 @@ nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); paddin
 .packages-inner { position: relative; z-index: 2; max-width: 1300px; margin: 0 auto; padding: 0 64px; }
 .packages-header { text-align: center; margin-bottom: 72px; }
 .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-.package-card { background: transparent; border: 1px solid rgba(200,169,110,0.22); padding: 48px 36px; position: relative; overflow: hidden; transition: border-color 0.3s, transform 0.3s; }
+.package-card { background: transparent; border: 1px solid rgba(200,169,110,0.22); padding: 56px 42px; position: relative; overflow: hidden; transition: border-color 0.3s, transform 0.3s; }
 .package-card.featured { border-color: rgba(200,169,110,0.5); }
 .package-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0; transition: opacity 0.4s; }
 .package-card:hover { border-color: rgba(200,169,110,0.4); transform: translateY(-4px); }
 .package-card:hover::after, .package-card.featured::after { opacity: 1; }
-.package-tag { font-family: var(--font-ui); font-size: 0.55rem; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; border: 1px solid var(--border); padding: 4px 10px; display: inline-block; margin-bottom: 20px; }
-.package-name { font-family: var(--font-display); font-size: 1.9rem; font-weight: 300; margin-bottom: 8px; }
+.package-tag { font-family: var(--font-ui); font-size: 0.72rem; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; border: 1px solid var(--border); padding: 4px 10px; display: inline-block; margin-bottom: 20px; }
+.package-name { font-family: var(--font-display); font-size: 2.4rem; font-weight: 300; margin-bottom: 8px; }
 .package-name em { font-style: italic; color: var(--gold-light); }
-.package-price { font-family: var(--font-ui); font-size: 0.68rem; letter-spacing: 0.15em; color: var(--white-dim); margin-bottom: 28px; }
+.package-price { font-family: var(--font-ui); font-size: 0.85rem; letter-spacing: 0.15em; color: var(--white-dim); margin-bottom: 28px; }
 .package-divider { height: 1px; background: var(--border); margin-bottom: 28px; }
 .package-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
-.package-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; color: var(--white-dim); line-height: 1.5; }
+.package-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 1.02rem; color: var(--white-dim); line-height: 1.5; }
 .package-features li::before { content: '—'; color: var(--gold); flex-shrink: 0; font-family: var(--font-ui); }
-.package-cta { display: block; width: 100%; text-align: center; font-family: var(--font-ui); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(200,169,110,0.35); padding: 13px; transition: background 0.3s, color 0.3s; cursor: none; }
+.package-cta { display: block; width: 100%; text-align: center; font-family: var(--font-ui); font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(200,169,110,0.35); padding: 13px; transition: background 0.3s, color 0.3s; cursor: none; }
 @media (max-width: 900px) { .package-cta { cursor: pointer; } }
 .package-cta:hover { background: var(--gold); color: var(--black); }
 @media (max-width: 900px) { .packages-inner { padding: 0 20px; } .packages-grid { grid-template-columns: 1fr; } }
@@ -606,14 +606,16 @@ nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); paddin
 .brands-inner { position: relative; z-index: 2; max-width: 1300px; margin: 0 auto; padding: 0 64px; }
 .brands-header { text-align: center; margin-bottom: 72px; }
 .brands-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-bottom: 64px; }
-.brand-cell { background: transparent; border: 1px solid rgba(200,169,110,0.18); padding: 36px 24px; text-align: center; transition: border-color 0.3s, background 0.3s, transform 0.3s; cursor: pointer; position: relative; }
+.brand-cell { background: transparent; border: 1px solid rgba(200,169,110,0.18); padding: 0; text-align: center; transition: border-color 0.3s, background 0.3s, transform 0.3s; cursor: pointer; position: relative; overflow: hidden; aspect-ratio: 1; display: flex; align-items: flex-end; justify-content: center; min-height: 200px; }
+.brand-cell-img { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.6s ease, filter 0.4s; filter: brightness(0.55); }
+.brand-cell:hover .brand-cell-img { transform: scale(1.08); filter: brightness(0.35); }
 .brand-cell:hover { border-color: rgba(200,169,110,0.55); background: rgba(200,169,110,0.05); transform: translateY(-3px); }
-.brand-cell-hint { font-family: var(--font-ui); font-size: 0.46rem; letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; margin-top: 10px; opacity: 0; transition: opacity 0.3s; }
+.brand-cell-hint { font-family: var(--font-ui); font-size: 0.62rem; letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; margin-top: 4px; opacity: 0; transition: opacity 0.3s; position: relative; z-index: 2; padding-bottom: 16px; text-shadow: 0 1px 8px rgba(0,0,0,0.7); }
 .brand-cell:hover .brand-cell-hint { opacity: 1; }
-.brand-icon { width: 40px; height: 40px; margin: 0 auto 14px; opacity: 0.45; transition: opacity 0.3s; }
+.brand-icon { display: none; }
 .brand-cell:hover .brand-icon { opacity: 0.85; }
 .brand-icon svg { width: 100%; height: 100%; }
-.brand-name { font-family: var(--font-ui); font-size: 0.62rem; letter-spacing: 0.2em; color: var(--white-dim); text-transform: uppercase; }
+.brand-name { font-family: var(--font-ui); font-size: 0.82rem; letter-spacing: 0.2em; color: var(--white); text-transform: uppercase; position: relative; z-index: 2; padding-bottom: 24px; text-shadow: 0 2px 12px rgba(0,0,0,0.7); }
 .brands-value { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
 .value-point { border-top: 1px solid var(--border); padding-top: 28px; }
 .value-num { font-family: var(--font-display); font-size: 2.8rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 10px; }
@@ -697,6 +699,71 @@ footer { background: var(--surface); border-top: 1px solid var(--border); paddin
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 .reveal-delay-5 { transition-delay: 0.5s; }
+
+/* VIDEO GAP FIX */
+section + section { margin-top: 0; }
+.has-video-bg + .has-video-bg { margin-top: 0; }
+.has-video-bg .video-bg-layer iframe { top: 50%; left: 50%; transform: translate(-50%,-50%) scale(1.05); }
+section.about, section.metrics, section.reel, section.audience, section.packages, section.brands {
+  margin-top: -1px;
+}
+
+/* SOUND TOGGLE */
+.sound-toggle {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  z-index: 9999;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,169,110,0.4);
+  background: rgba(8,8,8,0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.3s, background 0.3s, transform 0.2s;
+}
+.sound-toggle:hover { border-color: var(--gold); background: rgba(200,169,110,0.12); transform: scale(1.08); }
+.sound-toggle svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.sound-toggle .bar1, .sound-toggle .bar2, .sound-toggle .bar3 {
+  display: inline-block; width: 3px; background: var(--gold); border-radius: 2px; margin: 0 1.5px;
+  transition: height 0.3s ease;
+}
+.sound-toggle.playing .bar1 { animation: soundbar 0.5s ease infinite alternate; }
+.sound-toggle.playing .bar2 { animation: soundbar 0.5s ease 0.15s infinite alternate; }
+.sound-toggle.playing .bar3 { animation: soundbar 0.5s ease 0.3s infinite alternate; }
+.sound-toggle .bar1 { height: 8px; }
+.sound-toggle .bar2 { height: 14px; }
+.sound-toggle .bar3 { height: 10px; }
+.sound-toggle:not(.playing) .bar1 { height: 4px; }
+.sound-toggle:not(.playing) .bar2 { height: 4px; }
+.sound-toggle:not(.playing) .bar3 { height: 4px; }
+@keyframes soundbar {
+  0% { height: 4px; }
+  100% { height: 16px; }
+}
+.sound-toggle-label {
+  position: absolute; left: 60px; white-space: nowrap;
+  font-family: var(--font-ui); font-size: 0.6rem; letter-spacing: 0.18em;
+  color: var(--gold); text-transform: uppercase; opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.sound-toggle:hover .sound-toggle-label { opacity: 1; }
+@media (max-width: 900px) { .sound-toggle { cursor: pointer; bottom: 20px; left: 20px; width: 42px; height: 42px; } }
+
+/* METRICS TOGGLE */
+.metrics-tab {
+  font-family: var(--font-ui); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--white-dim); border: 1px solid var(--border); padding: 10px 28px;
+  background: transparent; transition: all 0.3s; cursor: pointer;
+}
+.metrics-tab.active { background: var(--gold); color: var(--black); border-color: var(--gold); }
+.metrics-tab:hover:not(.active) { border-color: rgba(200,169,110,0.5); color: var(--gold); }
+@media (max-width: 900px) { .metrics-tab { cursor: pointer; padding: 8px 18px; font-size: 0.68rem; } }
 </style>
 </head>
 <body>
@@ -845,18 +912,22 @@ footer { background: var(--surface); border-top: 1px solid var(--border); paddin
   </button>
   <div class="metrics-inner">
     <div class="metrics-header">
-      <div class="section-eyebrow reveal">30-Day Performance</div>
+      <div class="section-eyebrow reveal">Performance Metrics</div>
       <h2 class="section-title reveal reveal-delay-1">Real Numbers,<br><em>Real Impact</em></h2>
+      <div class="metrics-toggle reveal reveal-delay-2" style="display:flex;gap:2px;justify-content:center;margin-bottom:48px;">
+        <button class="metrics-tab active" onclick="switchMetrics('lifetime')" id="tab-lifetime">Lifetime</button>
+        <button class="metrics-tab" onclick="switchMetrics('30day')" id="tab-30day">Past 30 Days</button>
+      </div>
     </div>
     <div class="metrics-grid">
-      <div class="metric-card reveal" style="--bar-width:90%"><div class="metric-num" data-count="360" data-suffix="K">0</div><div class="metric-label">Total Followers</div><div class="metric-desc">Across all platforms</div><div class="metric-bar-wrap"><div class="metric-bar"></div></div></div>
-      <div class="metric-card reveal reveal-delay-1" style="--bar-width:85%"><div class="metric-num" data-count="1.5" data-suffix="M">0</div><div class="metric-label">Monthly Views</div><div class="metric-desc">Combined 30-day total</div><div class="metric-bar-wrap"><div class="metric-bar"></div></div></div>
-      <div class="metric-card reveal reveal-delay-2" style="--bar-width:78%"><div class="metric-num" data-count="142" data-suffix="K">0</div><div class="metric-label">Interactions</div><div class="metric-desc">Likes, comments, shares</div><div class="metric-bar-wrap"><div class="metric-bar"></div></div></div>
-      <div class="metric-card reveal reveal-delay-1" style="--bar-width:80%"><div class="metric-num" data-count="160" data-suffix="K">0</div><div class="metric-label">Avg Reel Views</div><div class="metric-desc">Per published reel</div><div class="metric-bar-wrap"><div class="metric-bar"></div></div></div>
-      <div class="metric-card reveal reveal-delay-2" style="--bar-width:95%"><div class="metric-num" data-count="700" data-suffix="K+">0</div><div class="metric-label">Top Reel Performance</div><div class="metric-desc">Single video peak reach</div><div class="metric-bar-wrap"><div class="metric-bar"></div></div></div>
-      <div class="metric-card reveal reveal-delay-3" style="--bar-width:88%"><div class="metric-num" data-count="368" data-suffix="K+">0</div><div class="metric-label">Total Reach</div><div class="metric-desc">Unique accounts reached</div><div class="metric-bar-wrap"><div class="metric-bar"></div></div></div>
+      <div class="metric-card reveal" style="--bar-width:90%"><div class="metric-num" data-count="360" data-suffix="K" data-lifetime="360" data-lifetime-suffix="K" data-30day="360" data-30day-suffix="K">0</div><div class="metric-label">Total Followers</div><div class="metric-desc" data-lifetime-desc="Across all platforms" data-30day-desc="Across all platforms">Across all platforms</div><div class="metric-bar-wrap"><div class="metric-bar"></div></div></div>
+      <div class="metric-card reveal reveal-delay-1" style="--bar-width:85%"><div class="metric-num" data-count="8.5" data-suffix="M" data-lifetime="8.5" data-lifetime-suffix="M" data-30day="1.5" data-30day-suffix="M">0</div><div class="metric-label" data-lifetime-label="Total Views" data-30day-label="Monthly Views">Total Views</div><div class="metric-desc" data-lifetime-desc="All-time across platforms" data-30day-desc="Combined 30-day total">All-time across platforms</div><div class="metric-bar-wrap"><div class="metric-bar"></div></div></div>
+      <div class="metric-card reveal reveal-delay-2" style="--bar-width:78%"><div class="metric-num" data-count="850" data-suffix="K" data-lifetime="850" data-lifetime-suffix="K" data-30day="142" data-30day-suffix="K">0</div><div class="metric-label">Interactions</div><div class="metric-desc" data-lifetime-desc="Lifetime engagement" data-30day-desc="Likes, comments, shares">Lifetime engagement</div><div class="metric-bar-wrap"><div class="metric-bar"></div></div></div>
+      <div class="metric-card reveal reveal-delay-1" style="--bar-width:80%"><div class="metric-num" data-count="160" data-suffix="K" data-lifetime="160" data-lifetime-suffix="K" data-30day="160" data-30day-suffix="K">0</div><div class="metric-label">Avg Reel Views</div><div class="metric-desc" data-lifetime-desc="Per published reel" data-30day-desc="Per published reel">Per published reel</div><div class="metric-bar-wrap"><div class="metric-bar"></div></div></div>
+      <div class="metric-card reveal reveal-delay-2" style="--bar-width:95%"><div class="metric-num" data-count="700" data-suffix="K+" data-lifetime="700" data-lifetime-suffix="K+" data-30day="700" data-30day-suffix="K+">0</div><div class="metric-label">Top Reel Performance</div><div class="metric-desc" data-lifetime-desc="Single video peak reach" data-30day-desc="Single video peak reach">Single video peak reach</div><div class="metric-bar-wrap"><div class="metric-bar"></div></div></div>
+      <div class="metric-card reveal reveal-delay-3" style="--bar-width:88%"><div class="metric-num" data-count="2.1" data-suffix="M+" data-lifetime="2.1" data-lifetime-suffix="M+" data-30day="368" data-30day-suffix="K+">0</div><div class="metric-label" data-lifetime-label="Total Reach" data-30day-label="Monthly Reach">Total Reach</div><div class="metric-desc" data-lifetime-desc="Unique accounts reached all-time" data-30day-desc="Unique accounts reached">Unique accounts reached all-time</div><div class="metric-bar-wrap"><div class="metric-bar"></div></div></div>
     </div>
-    <div class="metrics-note reveal">* Data reflects 30-day trailing average · Verified via Meta Creator Studio</div>
+    <div class="metrics-note reveal">* Lifetime data reflects all-time totals · 30-day data verified via Meta Creator Studio · Verified via Meta Creator Studio</div>
   </div>
 </section>
 
@@ -1043,14 +1114,14 @@ footer { background: var(--surface); border-top: 1px solid var(--border); paddin
       <p class="reveal reveal-delay-2" style="color:var(--white-dim);max-width:540px;margin:0 auto;font-size:0.95rem">Ideal for brands in the luxury hospitality, travel, dining, fashion, and lifestyle verticals seeking authentic audience connection.</p>
     </div>
     <div class="brands-grid reveal">
-      <div class="brand-cell" onclick="openNiche('hotels')" role="button" tabindex="0" aria-label="Luxury Hotels — click to explore"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="10" width="30" height="20" rx="2" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M5 15h30M15 10v20" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Luxury Hotels</div><div class="brand-cell-hint">Explore ↗</div></div>
-      <div class="brand-cell" onclick="openNiche('villas')" role="button" tabindex="0" aria-label="Private Villas — click to explore"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 5L5 15v20h10V25h10v10h10V15L20 5z" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Private Villas</div><div class="brand-cell-hint">Explore ↗</div></div>
-      <div class="brand-cell" onclick="openNiche('dining')" role="button" tabindex="0" aria-label="Fine Dining — click to explore"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="16" r="8" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M8 35c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Fine Dining</div><div class="brand-cell-hint">Explore ↗</div></div>
-      <div class="brand-cell" onclick="openNiche('travel')" role="button" tabindex="0" aria-label="Travel Brands — click to explore"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 20 Q20 5 33 20 Q20 35 7 20z" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><circle cx="20" cy="20" r="4" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Travel Brands</div><div class="brand-cell-hint">Explore ↗</div></div>
-      <div class="brand-cell" onclick="openNiche('lifestyle')" role="button" tabindex="0" aria-label="Lifestyle — click to explore"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 30V15l10-8 10 8v15" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><rect x="16" y="22" width="8" height="8" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Lifestyle</div><div class="brand-cell-hint">Explore ↗</div></div>
-      <div class="brand-cell" onclick="openNiche('fashion')" role="button" tabindex="0" aria-label="Fashion — click to explore"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="12" width="24" height="18" rx="2" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M14 12V9a6 6 0 0112 0v3" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Fashion</div><div class="brand-cell-hint">Explore ↗</div></div>
-      <div class="brand-cell" onclick="openNiche('spirits')" role="button" tabindex="0" aria-label="Spirits &amp; Wine — click to explore"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L33 14v12L20 33 7 26V14z" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Spirits &amp; Wine</div><div class="brand-cell-hint">Explore ↗</div></div>
-      <div class="brand-cell" onclick="openNiche('wellness')" role="button" tabindex="0" aria-label="Wellness &amp; Spa — click to explore"><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="12" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M20 8v12l7 7" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Wellness &amp; Spa</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('hotels')" role="button" tabindex="0" aria-label="Luxury Hotels — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=600&fit=crop&q=80')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="10" width="30" height="20" rx="2" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M5 15h30M15 10v20" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Luxury Hotels</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('villas')" role="button" tabindex="0" aria-label="Private Villas — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&h=600&fit=crop&q=80')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 5L5 15v20h10V25h10v10h10V15L20 5z" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Private Villas</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('dining')" role="button" tabindex="0" aria-label="Fine Dining — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=600&fit=crop&q=80')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="16" r="8" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M8 35c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Fine Dining</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('travel')" role="button" tabindex="0" aria-label="Travel Brands — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=600&fit=crop&q=80')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 20 Q20 5 33 20 Q20 35 7 20z" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><circle cx="20" cy="20" r="4" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Travel Brands</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('lifestyle')" role="button" tabindex="0" aria-label="Lifestyle — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=600&fit=crop&q=80')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 30V15l10-8 10 8v15" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><rect x="16" y="22" width="8" height="8" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Lifestyle</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('fashion')" role="button" tabindex="0" aria-label="Fashion — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=600&fit=crop&q=80')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="12" width="24" height="18" rx="2" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M14 12V9a6 6 0 0112 0v3" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Fashion</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('spirits')" role="button" tabindex="0" aria-label="Spirits &amp; Wine — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&h=600&fit=crop&q=80')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L33 14v12L20 33 7 26V14z" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Spirits &amp; Wine</div><div class="brand-cell-hint">Explore ↗</div></div>
+      <div class="brand-cell" onclick="openNiche('wellness')" role="button" tabindex="0" aria-label="Wellness &amp; Spa — click to explore"><div class="brand-cell-img" style="background-image:url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=600&fit=crop&q=80')"></div><div class="brand-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="12" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/><path d="M20 8v12l7 7" stroke="rgba(245,242,238,0.5)" stroke-width="1.5"/></svg></div><div class="brand-name">Wellness &amp; Spa</div><div class="brand-cell-hint">Explore ↗</div></div>
     </div>
     <div class="brands-value">
       <div class="value-point reveal"><div class="value-num" data-count="4.2" data-suffix="%">0</div><div class="value-label">Engagement Rate</div><div class="value-desc">Well above the industry average of 1–2% for accounts in this follower range, signaling highly invested viewers.</div></div>
@@ -1645,6 +1716,71 @@ footer { background: var(--surface); border-top: 1px solid var(--border); paddin
     });
   });
 })();
+</script>
+
+<!-- SOUND TOGGLE -->
+<button class="sound-toggle" id="soundToggle" aria-label="Toggle ambient sound" onclick="toggleSound()">
+  <span class="bar1"></span>
+  <span class="bar2"></span>
+  <span class="bar3"></span>
+  <span class="sound-toggle-label">Sound</span>
+</button>
+<audio id="ambientAudio" loop preload="auto">
+  <source src="assets/audio/fly-me-to-tulum.mp3" type="audio/mpeg">
+</audio>
+<script>
+var ambientAudio = document.getElementById('ambientAudio');
+var soundBtn = document.getElementById('soundToggle');
+ambientAudio.volume = 0.25;
+function toggleSound() {
+  if (ambientAudio.paused) {
+    ambientAudio.play().then(function() {
+      soundBtn.classList.add('playing');
+    }).catch(function(e) { console.log('Audio play blocked:', e); });
+  } else {
+    ambientAudio.pause();
+    soundBtn.classList.remove('playing');
+  }
+}
+</script>
+
+<script>
+function switchMetrics(mode) {
+  document.querySelectorAll('.metrics-tab').forEach(function(t) { t.classList.remove('active'); });
+  document.getElementById('tab-' + mode).classList.add('active');
+  document.querySelectorAll('.metric-num').forEach(function(el) {
+    var val = el.getAttribute('data-' + mode);
+    var suffix = el.getAttribute('data-' + mode + '-suffix');
+    if (val) {
+      el.setAttribute('data-count', val);
+      el.setAttribute('data-suffix', suffix || '');
+      // Re-animate
+      var target = parseFloat(val);
+      var sfx = suffix || '';
+      var isDecimal = val.indexOf('.') !== -1;
+      var duration = 1200;
+      var startTime = null;
+      function animate(ts) {
+        if (!startTime) startTime = ts;
+        var progress = Math.min((ts - startTime) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var current = target * eased;
+        el.textContent = isDecimal ? current.toFixed(1) + sfx : Math.floor(current).toLocaleString() + sfx;
+        if (progress < 1) requestAnimationFrame(animate);
+      }
+      requestAnimationFrame(animate);
+    }
+  });
+  // Update labels and descriptions
+  document.querySelectorAll('.metric-label').forEach(function(el) {
+    var label = el.getAttribute('data-' + mode + '-label');
+    if (label) el.textContent = label;
+  });
+  document.querySelectorAll('.metric-desc').forEach(function(el) {
+    var desc = el.getAttribute('data-' + mode + '-desc');
+    if (desc) el.textContent = desc;
+  });
+}
 </script>
 </body>
 </html>
