@@ -1106,7 +1106,7 @@ section.about, section.metrics, section.reel, section.audience, section.packages
       <div class="section-eyebrow reveal">Signature Reel</div>
       <h2 class="section-title reveal reveal-delay-1">Watch the <em>Story</em></h2>
     </div>
-    <div class="reel-video-wrap reveal reveal-delay-2" onclick="openVideoFg('assets/video/operation-redline.mp4', false)" role="button" tabindex="0" aria-label="Play signature reel" onkeypress="if(event.key==='Enter')openVideoFg('assets/video/operation-redline.mp4',false)">
+    <div class="reel-video-wrap reveal reveal-delay-2" onclick="openVideoFg('https://youtu.be/Rzwmm4nQJuk', false)" role="button" tabindex="0" aria-label="Play signature reel" onkeypress="if(event.key==='Enter')openVideoFg('assets/video/operation-redline.mp4',false)">
       <div class="reel-placeholder" aria-hidden="true"></div>
       <div class="reel-play-btn" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
       <div class="reel-label">Play Signature Reel</div>
@@ -1671,6 +1671,13 @@ section.about, section.metrics, section.reel, section.audience, section.packages
       vid.src = id;
       vid.style.display = 'block';
       vid.play().catch(function(){});
+    } else if (id.indexOf('youtube') !== -1 || id.indexOf('youtu.be') !== -1) {
+      vid.style.display = 'none';
+      vid.pause();
+      vid.src = '';
+      iframe.style.display = '';
+      var ytId = id.split('/').pop().split('?')[0];
+      iframe.src = 'https://www.youtube.com/embed/' + ytId + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
     } else {
       vid.style.display = 'none';
       vid.pause();
