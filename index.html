@@ -482,15 +482,14 @@ nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); paddin
 .about { padding: 120px 0; }
 .about-inner { position: relative; z-index: 2; max-width: 1300px; margin: 0 auto; padding: 0 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 .about-images { position: relative; height: 560px; }
-.about-main-img { position: absolute; inset: 0 60px 0 0; background: url('assets/images/about-main.jpg') 50% 20%/cover no-repeat; border: 1px solid var(--border); }
-.about-float-img { position: absolute; bottom: -40px; right: 0; width: 220px; height: 280px; background: url('assets/images/about-float.jpg') center/cover no-repeat; border: 1px solid rgba(200,169,110,0.3); box-shadow: -20px 20px 60px rgba(0,0,0,0.6); }
+.about-main-img { position: absolute; inset: 0; background: url('assets/images/about-main.jpg') 50% 20%/cover no-repeat; border: 1px solid var(--border); }
 .section-eyebrow { font-family: var(--font-ui); font-size: 0.85rem; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 20px; }
 .section-title { font-family: var(--font-display); font-size: clamp(3.4rem, 6vw, 5.6rem); font-weight: 300; line-height: 1.02; margin-bottom: 28px; }
 .section-title em { font-style: italic; color: var(--gold-light); }
 .about-body p { color: var(--white-dim); font-size: 1.1rem; line-height: 1.8; margin-bottom: 18px; }
 .about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
 .about-tag { font-family: var(--font-ui); font-size: 0.72rem; letter-spacing: 0.18em; color: var(--gold); border: 1px solid var(--border); padding: 6px 14px; text-transform: uppercase; }
-@media (max-width: 900px) { .about-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; } .about-images { height: 360px; } .about-float-img { width: 140px; height: 180px; } }
+@media (max-width: 900px) { .about-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; } .about-images { height: 360px; }  }
 
 /* ============================================================
    METRICS
@@ -1014,7 +1013,6 @@ section.about, section.metrics, section.reel, section.audience, section.packages
   <div class="about-inner">
     <div class="about-images reveal">
       <div class="about-main-img" role="img" aria-label="Chris Marchese portrait"></div>
-      <div class="about-float-img" role="img" aria-label="Chris Marchese lifestyle"></div>
     </div>
     <div class="about-body">
       <div class="section-eyebrow reveal">The Creator</div>
