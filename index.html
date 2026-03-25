@@ -103,8 +103,8 @@ button { cursor: none; border: none; background: none; font: inherit; }
   opacity: 0.85;
 }
 .cursor-outer.hover {
-  width: 52px; height: 52px;
-  opacity: 0.9;
+  width: 40px; height: 40px;
+  opacity: 0.6;
 }
 @media (max-width: 900px) { .cursor-outer, .cursor-inner { display: none; } }
 
@@ -137,6 +137,9 @@ button { cursor: none; border: none; background: none; font: inherit; }
   height: 100%;
   min-width: 100%;
   min-height: 56.25vw;
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   pointer-events: none;
   border: none;
   object-fit: cover;
@@ -387,6 +390,9 @@ button { cursor: none; border: none; background: none; font: inherit; }
   pointer-events: none;
   border: none;
   object-fit: cover;
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .video-bg-layer.vertical iframe, .video-bg-layer.vertical video {
   width: 100%;
@@ -744,7 +750,7 @@ footer { background: var(--surface); border-top: 1px solid var(--border); paddin
 /* VIDEO GAP FIX */
 section + section { margin-top: 0; }
 .has-video-bg + .has-video-bg { margin-top: 0; }
-.has-video-bg .video-bg-layer iframe, .has-video-bg .video-bg-layer video { top: 50%; left: 50%; transform: translate(-50%,-50%) scale(1.05); }
+.has-video-bg .video-bg-layer iframe, .has-video-bg .video-bg-layer video { top: 50%; left: 50%; transform: translate(-50%,-50%); }
 section.about, section.metrics, section.reel, section.audience, section.packages, section.brands {
   margin-top: -1px;
 }
