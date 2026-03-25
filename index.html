@@ -626,6 +626,19 @@ nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); paddin
 @media (max-width: 900px) { .brands-inner { padding: 0 20px; } .brands-grid { grid-template-columns: repeat(2, 1fr); } .brands-value { grid-template-columns: 1fr; } }
 
 /* ============================================================
+   FEATURED EXPERIENCES STRIP
+   ============================================================ */
+.partners { padding: 48px 0; background: var(--near-black); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden; position: relative; }
+.partners-label { text-align: center; font-family: var(--font-ui); font-size: 0.55rem; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 28px; }
+.partners-track { display: flex; gap: 56px; animation: partners-scroll 45s linear infinite; width: max-content; }
+.partners-track:hover { animation-play-state: paused; }
+.partner-name { font-family: var(--font-display); font-size: 1.05rem; font-weight: 400; color: rgba(245,242,238,0.35); white-space: nowrap; letter-spacing: 0.04em; transition: color 0.3s; }
+.partner-name:hover { color: var(--gold-light); }
+.partner-dot { color: rgba(200,169,110,0.25); font-size: 0.5rem; align-self: center; }
+@keyframes partners-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@media (max-width: 900px) { .partner-name { font-size: 0.9rem; } .partners-track { gap: 40px; } .partners { padding: 36px 0; } }
+
+/* ============================================================
    NICHE MODAL
    ============================================================ */
 .niche-overlay { position: fixed; inset: 0; z-index: 9000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.4s; }
@@ -865,6 +878,95 @@ section.about, section.metrics, section.reel, section.audience, section.packages
     <div class="ticker-item"><span class="ticker-val">5M+</span><span class="ticker-label">Total Reach</span></div>
   </div>
 </div>
+
+<!-- ============================================================
+     FEATURED EXPERIENCES
+     ============================================================ -->
+<section class="partners" aria-label="Featured Experiences">
+  <div class="partners-label">Content Created At</div>
+  <div class="partners-track">
+    <span class="partner-name">Four Seasons Toronto</span><span class="partner-dot">·</span>
+    <span class="partner-name">The Ritz-Carlton Toronto</span><span class="partner-dot">·</span>
+    <span class="partner-name">The St. Regis Toronto</span><span class="partner-dot">·</span>
+    <span class="partner-name">Shangri-La Toronto</span><span class="partner-dot">·</span>
+    <span class="partner-name">The Hazelton Hotel</span><span class="partner-dot">·</span>
+    <span class="partner-name">Park Hyatt Toronto</span><span class="partner-dot">·</span>
+    <span class="partner-name">Bisha Hotel</span><span class="partner-dot">·</span>
+    <span class="partner-name">1 Hotel Toronto</span><span class="partner-dot">·</span>
+    <span class="partner-name">W Hotels</span><span class="partner-dot">·</span>
+    <span class="partner-name">Alo</span><span class="partner-dot">·</span>
+    <span class="partner-name">Don Alfonso 1890</span><span class="partner-dot">·</span>
+    <span class="partner-name">Canoe</span><span class="partner-dot">·</span>
+    <span class="partner-name">Harbour Sixty</span><span class="partner-dot">·</span>
+    <span class="partner-name">Jacobs &amp; Co.</span><span class="partner-dot">·</span>
+    <span class="partner-name">Sotto Sotto</span><span class="partner-dot">·</span>
+    <span class="partner-name">Kasa Moto</span><span class="partner-dot">·</span>
+    <span class="partner-name">KOST</span><span class="partner-dot">·</span>
+    <span class="partner-name">Miku Toronto</span><span class="partner-dot">·</span>
+    <span class="partner-name">STK Toronto</span><span class="partner-dot">·</span>
+    <span class="partner-name">360 Restaurant</span><span class="partner-dot">·</span>
+    <span class="partner-name">Faena Miami Beach</span><span class="partner-dot">·</span>
+    <span class="partner-name">The Setai</span><span class="partner-dot">·</span>
+    <span class="partner-name">Four Seasons Surf Club</span><span class="partner-dot">·</span>
+    <span class="partner-name">Acqualina Resort</span><span class="partner-dot">·</span>
+    <span class="partner-name">Fontainebleau</span><span class="partner-dot">·</span>
+    <span class="partner-name">The Edition Miami</span><span class="partner-dot">·</span>
+    <span class="partner-name">1 Hotel South Beach</span><span class="partner-dot">·</span>
+    <span class="partner-name">St. Regis Bal Harbour</span><span class="partner-dot">·</span>
+    <span class="partner-name">Nobu Hotel Miami</span><span class="partner-dot">·</span>
+    <span class="partner-name">The Diplomat Beach Resort</span><span class="partner-dot">·</span>
+    <span class="partner-name">Nobu Miami</span><span class="partner-dot">·</span>
+    <span class="partner-name">Komodo</span><span class="partner-dot">·</span>
+    <span class="partner-name">Zuma</span><span class="partner-dot">·</span>
+    <span class="partner-name">Papi Steak</span><span class="partner-dot">·</span>
+    <span class="partner-name">Gekko</span><span class="partner-dot">·</span>
+    <span class="partner-name">Carbone Miami</span><span class="partner-dot">·</span>
+    <span class="partner-name">Swan</span><span class="partner-dot">·</span>
+    <span class="partner-name">Casa Tua</span><span class="partner-dot">·</span>
+    <span class="partner-name">LPM Restaurant</span><span class="partner-dot">·</span>
+    <span class="partner-name">Juvia</span><span class="partner-dot">·</span>
+    <span class="partner-name">Four Seasons Toronto</span><span class="partner-dot">·</span>
+    <span class="partner-name">The Ritz-Carlton Toronto</span><span class="partner-dot">·</span>
+    <span class="partner-name">The St. Regis Toronto</span><span class="partner-dot">·</span>
+    <span class="partner-name">Shangri-La Toronto</span><span class="partner-dot">·</span>
+    <span class="partner-name">The Hazelton Hotel</span><span class="partner-dot">·</span>
+    <span class="partner-name">Park Hyatt Toronto</span><span class="partner-dot">·</span>
+    <span class="partner-name">Bisha Hotel</span><span class="partner-dot">·</span>
+    <span class="partner-name">1 Hotel Toronto</span><span class="partner-dot">·</span>
+    <span class="partner-name">W Hotels</span><span class="partner-dot">·</span>
+    <span class="partner-name">Alo</span><span class="partner-dot">·</span>
+    <span class="partner-name">Don Alfonso 1890</span><span class="partner-dot">·</span>
+    <span class="partner-name">Canoe</span><span class="partner-dot">·</span>
+    <span class="partner-name">Harbour Sixty</span><span class="partner-dot">·</span>
+    <span class="partner-name">Jacobs &amp; Co.</span><span class="partner-dot">·</span>
+    <span class="partner-name">Sotto Sotto</span><span class="partner-dot">·</span>
+    <span class="partner-name">Kasa Moto</span><span class="partner-dot">·</span>
+    <span class="partner-name">KOST</span><span class="partner-dot">·</span>
+    <span class="partner-name">Miku Toronto</span><span class="partner-dot">·</span>
+    <span class="partner-name">STK Toronto</span><span class="partner-dot">·</span>
+    <span class="partner-name">360 Restaurant</span><span class="partner-dot">·</span>
+    <span class="partner-name">Faena Miami Beach</span><span class="partner-dot">·</span>
+    <span class="partner-name">The Setai</span><span class="partner-dot">·</span>
+    <span class="partner-name">Four Seasons Surf Club</span><span class="partner-dot">·</span>
+    <span class="partner-name">Acqualina Resort</span><span class="partner-dot">·</span>
+    <span class="partner-name">Fontainebleau</span><span class="partner-dot">·</span>
+    <span class="partner-name">The Edition Miami</span><span class="partner-dot">·</span>
+    <span class="partner-name">1 Hotel South Beach</span><span class="partner-dot">·</span>
+    <span class="partner-name">St. Regis Bal Harbour</span><span class="partner-dot">·</span>
+    <span class="partner-name">Nobu Hotel Miami</span><span class="partner-dot">·</span>
+    <span class="partner-name">The Diplomat Beach Resort</span><span class="partner-dot">·</span>
+    <span class="partner-name">Nobu Miami</span><span class="partner-dot">·</span>
+    <span class="partner-name">Komodo</span><span class="partner-dot">·</span>
+    <span class="partner-name">Zuma</span><span class="partner-dot">·</span>
+    <span class="partner-name">Papi Steak</span><span class="partner-dot">·</span>
+    <span class="partner-name">Gekko</span><span class="partner-dot">·</span>
+    <span class="partner-name">Carbone Miami</span><span class="partner-dot">·</span>
+    <span class="partner-name">Swan</span><span class="partner-dot">·</span>
+    <span class="partner-name">Casa Tua</span><span class="partner-dot">·</span>
+    <span class="partner-name">LPM Restaurant</span><span class="partner-dot">·</span>
+    <span class="partner-name">Juvia</span>
+  </div>
+</section>
 
 <!-- ============================================================
      ABOUT
