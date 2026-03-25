@@ -7,6 +7,14 @@
 <meta property="og:title" content="Chris Marchese · Luxury Creator Media Kit" />
 <meta property="og:description" content="500K+ Followers · 1.5M Monthly Views · Cinematic content for luxury hotels, resorts &amp; lifestyle brands." />
 <meta property="og:type" content="website" />
+<meta property="og:image" content="https://chrismarchesemediakit.vercel.app/assets/images/og-image.jpg" />
+<meta property="og:image:width" content="2400" />
+<meta property="og:image:height" content="1350" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://chrismarchesemediakit.vercel.app/assets/images/og-image.jpg" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -639,6 +647,21 @@ nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); paddin
 @media (max-width: 900px) { .partner-name { font-size: 0.9rem; } .partners-track { gap: 40px; } .partners { padding: 36px 0; } }
 
 /* ============================================================
+   ECOSYSTEM / BEYOND THE FEED
+   ============================================================ */
+.ecosystem { padding: 120px 0; background: var(--surface); position: relative; }
+.ecosystem-inner { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 0 64px; }
+.ecosystem-header { text-align: center; margin-bottom: 72px; }
+.ecosystem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.eco-card { background: rgba(200,169,110,0.04); border: 1px solid var(--border); padding: 40px 32px; text-align: center; transition: border-color 0.3s, transform 0.3s; }
+.eco-card:hover { border-color: rgba(200,169,110,0.4); transform: translateY(-4px); }
+.eco-icon { font-size: 1.8rem; margin-bottom: 16px; }
+.eco-title { font-family: var(--font-display); font-size: 1.3rem; font-style: italic; color: var(--gold-light); margin-bottom: 8px; }
+.eco-role { font-family: var(--font-ui); font-size: 0.6rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+.eco-desc { font-size: 0.85rem; color: var(--white-dim); line-height: 1.7; }
+@media (max-width: 900px) { .ecosystem-inner { padding: 0 20px; } .ecosystem-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
    NICHE MODAL
    ============================================================ */
 .niche-overlay { position: fixed; inset: 0; z-index: 9000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.4s; }
@@ -806,7 +829,7 @@ section.about, section.metrics, section.reel, section.audience, section.packages
   <div class="splash-corner br">Media Kit</div>
   <div class="splash-content">
     <div class="splash-eyebrow">Luxury Creator · Hospitality</div>
-    <div class="splash-name"><img src="assets/images/logo-white.png" alt="Chris Marchese" style="height:60px;width:auto;"></div>
+    <div class="splash-name"><img src="assets/images/logo-white.png" alt="Chris Marchese" style="height:100px;width:auto;"></div>
     <div class="splash-line" aria-hidden="true"></div>
     <div class="splash-cta-wrap">
       <button class="splash-cta" id="splashBtn" aria-label="View Media Kit">
@@ -834,7 +857,7 @@ section.about, section.metrics, section.reel, section.audience, section.packages
      NAV
      ============================================================ -->
 <nav id="mainNav" role="navigation" aria-label="Main navigation">
-  <div class="nav-logo"><img src="assets/images/logo-white.png" alt="Chris Marchese" style="height:28px;width:auto;"></div>
+  <div class="nav-logo"><img src="assets/images/logo-white.png" alt="Chris Marchese" style="height:48px;width:auto;"></div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#metrics">Metrics</a></li>
@@ -987,9 +1010,9 @@ section.about, section.metrics, section.reel, section.audience, section.packages
       <div class="section-eyebrow reveal">The Creator</div>
       <h2 class="section-title reveal reveal-delay-1">Crafting Luxury<br><em>Experiences</em></h2>
       <div class="reveal reveal-delay-2">
-        <p>Chris Marchese is a Toronto and Miami-based luxury lifestyle and hospitality creator with a dedicated audience of over 500,000 followers across Instagram and TikTok. His content bridges the gap between aspirational travel and authentic storytelling.</p>
-        <p>Specializing in high-end resort experiences, private dining, and bespoke travel adventures, Chris has become the go-to voice for affluent millennials seeking curated luxury experiences in North America and beyond.</p>
-        <p>With a background in marketing and a refined aesthetic eye, every piece of content is built to convert. Viewers become guests. Guests become advocates.</p>
+        <p>Chris Marchese is a luxury lifestyle and hospitality creator based between Toronto and Miami, with over 500,000 followers across Instagram and TikTok. He also runs SET Marketing, a growth consultancy for premium brands, and is the founder of SET Enterprises and SET Ventures.</p>
+        <p>His content lives at the intersection of luxury hospitality, fine dining, and travel. From five-star resorts to private villas, every frame is intentional and every story is real. The audience trusts his taste because he actually lives this life.</p>
+        <p>With a marketing background and an editorial eye for production, Chris doesn't just post content. He builds campaigns. Viewers become guests. Guests become advocates. Brands get results.</p>
       </div>
       <div class="about-tags reveal reveal-delay-3">
         <div class="about-tag">Luxury Resorts</div>
@@ -1132,6 +1155,57 @@ section.about, section.metrics, section.reel, section.audience, section.packages
 </section>
 
 <!-- ============================================================
+     BEYOND THE FEED
+     ============================================================ -->
+<section class="ecosystem" id="ecosystem" aria-label="Beyond The Feed">
+  <div class="ecosystem-inner">
+    <div class="ecosystem-header">
+      <div class="section-eyebrow reveal">Beyond The Feed</div>
+      <h2 class="section-title reveal reveal-delay-1">More Than a <em>Creator</em></h2>
+      <p class="reveal reveal-delay-2" style="color:var(--white-dim);max-width:520px;margin:0 auto;font-size:0.95rem">The content is just the surface. Behind it is a full ecosystem of brands, businesses, and strategic thinking.</p>
+    </div>
+    <div class="ecosystem-grid">
+      <div class="eco-card reveal">
+        <div class="eco-icon">◆</div>
+        <div class="eco-title">SET Marketing</div>
+        <div class="eco-role">Founder</div>
+        <div class="eco-desc">Fractional CMO and growth infrastructure for premium brands. Strategy, content, and execution under one roof.</div>
+      </div>
+      <div class="eco-card reveal reveal-delay-1">
+        <div class="eco-icon">◆</div>
+        <div class="eco-title">SET Enterprises</div>
+        <div class="eco-role">Founder</div>
+        <div class="eco-desc">The parent company behind the SET portfolio. Building verticals across marketing, ventures, and media.</div>
+      </div>
+      <div class="eco-card reveal reveal-delay-2">
+        <div class="eco-icon">◆</div>
+        <div class="eco-title">SET Ventures</div>
+        <div class="eco-role">Founder</div>
+        <div class="eco-desc">Commercial bridge lending and strategic capital. Connecting opportunity with execution in real estate and beyond.</div>
+      </div>
+      <div class="eco-card reveal">
+        <div class="eco-icon">◆</div>
+        <div class="eco-title">Setting The Pace</div>
+        <div class="eco-role">Newsletter</div>
+        <div class="eco-desc">A LinkedIn newsletter on growth, leadership, and building in the luxury space. Written from the field, not the sidelines.</div>
+      </div>
+      <div class="eco-card reveal reveal-delay-1">
+        <div class="eco-icon">◆</div>
+        <div class="eco-title">IMDb</div>
+        <div class="eco-role">On-Screen</div>
+        <div class="eco-desc">Credits in film and television. Because storytelling doesnx27t stop at social media.</div>
+      </div>
+      <div class="eco-card reveal reveal-delay-2">
+        <div class="eco-icon">◆</div>
+        <div class="eco-title">500K+ Community</div>
+        <div class="eco-role">Audience</div>
+        <div class="eco-desc">A real community of luxury travelers, food lovers, and high-income professionals who trust the taste and follow the recommendations.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      PACKAGES
      ============================================================ -->
 <section class="packages has-video-bg" id="packages" aria-label="Partnership Packages">
@@ -1259,16 +1333,23 @@ section.about, section.metrics, section.reel, section.audience, section.packages
           <div class="cc-icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></div>
           <div><div class="cc-label">LinkedIn</div><div class="cc-value">thechrismarchese</div></div>
         </a>
+        <a href="https://www.tiktok.com/@artbymarchese" target="_blank" rel="noopener noreferrer" class="contact-channel reveal reveal-delay-4">
+          <div class="cc-icon"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.47a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.79a8.22 8.22 0 0 0 4.76 1.52V6.83a4.83 4.83 0 0 1-1-.14z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div>
+          <div><div class="cc-label">TikTok</div><div class="cc-value">@artbymarchese</div></div>
+        </a>
       </div>
     </div>
     <div class="contact-form reveal reveal-delay-2">
       <div class="contact-form-title">Send an Inquiry</div>
-      <form onsubmit="return false;">
-        <div class="form-row"><input type="text" placeholder="Your Name" aria-label="Your Name" /></div>
-        <div class="form-row"><input type="email" placeholder="Email Address" aria-label="Email Address" /></div>
-        <div class="form-row"><input type="text" placeholder="Brand / Company" aria-label="Brand or Company" /></div>
+      <form action="https://formsubmit.co/chris@marketingbyset.com" method="POST">
+        <input type="hidden" name="_subject" value="New Media Kit Inquiry">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://chrismarchesemediakit.vercel.app/#contact">
+        <div class="form-row"><input type="text" name="name" placeholder="Your Name" aria-label="Your Name" required /></div>
+        <div class="form-row"><input type="email" name="email" placeholder="Email Address" aria-label="Email Address" required /></div>
+        <div class="form-row"><input type="text" name="company" placeholder="Brand / Company" aria-label="Brand or Company" /></div>
         <div class="form-row">
-          <select aria-label="Package Interest">
+          <select name="package" aria-label="Package Interest">
             <option value="" disabled selected>Package Interest</option>
             <option>The Signature · $2,500+</option>
             <option>The Premier · $5,500+</option>
@@ -1276,7 +1357,7 @@ section.about, section.metrics, section.reel, section.audience, section.packages
             <option>Custom Partnership</option>
           </select>
         </div>
-        <div class="form-row"><textarea placeholder="Tell us about your brand and campaign goals..." aria-label="Message"></textarea></div>
+        <div class="form-row"><textarea name="message" placeholder="Tell us about your brand and campaign goals..." aria-label="Message"></textarea></div>
         <div class="form-row"><button type="submit" class="form-submit">Send Inquiry →</button></div>
       </form>
     </div>
@@ -1287,11 +1368,12 @@ section.about, section.metrics, section.reel, section.audience, section.packages
      FOOTER
      ============================================================ -->
 <footer role="contentinfo">
-  <div class="footer-logo"><img src="assets/images/logo-white.png" alt="Chris Marchese" style="height:32px;width:auto;"></div>
+  <div class="footer-logo"><img src="assets/images/logo-white.png" alt="Chris Marchese" style="height:56px;width:auto;"></div>
   <div class="footer-copy">Creator Media Kit · 2026 · All Rights Reserved</div>
   <div class="footer-links">
     <a href="https://www.instagram.com/chrismarchese/" target="_blank" rel="noopener noreferrer">Instagram</a>
     <a href="https://www.linkedin.com/in/thechrismarchese/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://www.tiktok.com/@artbymarchese" target="_blank" rel="noopener noreferrer">TikTok</a>
     <a href="https://www.imdb.com/name/nm17934193/" target="_blank" rel="noopener noreferrer">IMDb</a>
     <a href="mailto:chris@marketingbyset.com">Email</a>
   </div>
