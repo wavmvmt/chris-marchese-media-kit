@@ -611,11 +611,11 @@ nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); paddin
 .package-divider { height: 1px; background: var(--border); margin-bottom: 28px; }
 .package-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
 .package-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 1.05rem; color: #e8e0d0; line-height: 1.5; font-weight: 500; text-shadow: 0 1px 6px rgba(0,0,0,0.6); }
-.package-features li::before { content: '—'; color: var(--gold); flex-shrink: 0; font-family: var(--font-ui); }
+.package-features li::before { content: ''; display: none; flex-shrink: 0; font-family: var(--font-ui); }
 .package-cta { display: block; width: 100%; text-align: center; font-family: var(--font-ui); font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(200,169,110,0.35); padding: 13px; transition: background 0.3s, color 0.3s; cursor: none; }
 @media (max-width: 900px) { .package-cta { cursor: pointer; } }
 .package-cta:hover { background: var(--gold); color: var(--black); }
-@media (max-width: 900px) { .packages-inner { padding: 0 20px; } .packages-grid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .packages-inner { padding: 0 20px; } .packages-grid { grid-template-columns: 1fr; } .package-card { text-align: center; } .package-features li { justify-content: center; } .package-tag { margin-left: auto; margin-right: auto; } }
 
 /* ============================================================
    BRANDS
