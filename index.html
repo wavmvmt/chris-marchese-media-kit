@@ -489,7 +489,7 @@ nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); paddin
 .about-body p { color: var(--white-dim); font-size: 1.1rem; line-height: 1.8; margin-bottom: 18px; }
 .about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
 .about-tag { font-family: var(--font-ui); font-size: 0.72rem; letter-spacing: 0.18em; color: var(--gold); border: 1px solid var(--border); padding: 6px 14px; text-transform: uppercase; }
-@media (max-width: 900px) { .about-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; } .about-images { height: 360px; }  }
+@media (max-width: 900px) { .about-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; } .about-images { height: 360px; } .about-main-img { background-position: 40% 20%; } .section-title { font-size: clamp(2rem, 8vw, 3rem); } .about-body p { font-size: 0.95rem; } }
 
 /* ============================================================
    METRICS
@@ -509,8 +509,8 @@ nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); paddin
 .metric-label { font-family: var(--font-ui); font-size: 0.8rem; letter-spacing: 0.22em; color: var(--white-dim); text-transform: uppercase; }
 .metric-desc { font-size: 0.95rem; color: rgba(245,242,238,0.35); margin-top: 8px; }
 .metrics-note { text-align: center; font-family: var(--font-ui); font-size: 0.58rem; letter-spacing: 0.18em; color: rgba(245,242,238,0.3); text-transform: uppercase; }
-@media (max-width: 900px) { .metrics-inner { padding: 0 20px; } .metrics-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 600px) { .metrics-grid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .metrics-inner { padding: 0 20px; } .metrics-grid { grid-template-columns: 1fr 1fr; gap: 2px; } .metrics-header { margin-bottom: 40px; } .metric-card { padding: 28px 16px; } .metric-num { font-size: 2rem; } .metric-label { font-size: 0.65rem; letter-spacing: 0.15em; } .metric-desc { font-size: 0.8rem; } }
+@media (max-width: 600px) { .metrics-grid { grid-template-columns: 1fr 1fr; } .metric-card { padding: 24px 12px; } .metric-num { font-size: 1.8rem; } }
 
 /* ============================================================
    GALLERY
